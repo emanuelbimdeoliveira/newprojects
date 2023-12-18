@@ -1,0 +1,36 @@
+.view-task {
+    position: relative;
+}
+
+.view-task, .task-data, aside, .more-data {
+    background: var(--light-low);
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5em;
+    align-items: center;
+}
+
+.view-task p, .view-task h2{
+    background: var(--light);
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    text-transform: capitalize;
+}
+
+.task-data {
+    background: var(--light);
+    flex-direction: row;
+}
+
+aside {
+    background: var(--light-low);
+    align-items: flex-start;   
+}
+
+.more-data {
+    background: var(--light);
+    margin-top: 1em;
+}

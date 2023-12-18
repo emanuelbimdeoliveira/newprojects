@@ -1,0 +1,45 @@
+.form-task {
+    background: var(--light-low);
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    border-radius: var(--border-radius);
+}
+
+.inputs, .submits {
+    width: 100%;
+    padding: var(--padding);
+    border: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    border-radius: var(--border-radius);
+}
+
+.form-task input {
+    width: 100%;
+    margin-bottom: .5em;
+    margin-top: .5em;
+    border-radius: var(--border-radius);
+}
+
+.form-task label {
+    width: 100%;
+    padding: var(--padding);
+    background: var(--light);
+    text-align: left;
+    border-radius: var(--border-radius);
+}
+
+.submits {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.submits input {
+    width: 20%;
+}

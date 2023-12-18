@@ -1,1 +1,21 @@
+main {
+    background: var(--light);
+    min-height: 80vh;
+    width: 100%;
+    padding: var(--padding);
+    text-align: center;
+}
 
+main > section {
+    max-width: 900px;
+    margin: auto;
+}
+
+h1 {
+    background: var(--blue);
+    width: 100%;
+    padding: var(--padding);
+    margin-top: 1em;
+    color: white;
+    border-radius: var(--border-radius);
+}

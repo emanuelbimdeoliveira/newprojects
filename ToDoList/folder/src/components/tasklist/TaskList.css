@@ -1,0 +1,35 @@
+.list-item form label {
+    display: flex;
+    gap: .5em;
+    align-items: center;
+}
+
+.list, .task-options ul {
+    background: var(--light-low);
+    list-style-type: none;
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    border-radius: var(--border-radius);
+}
+
+.list-item, .task-options li {
+    background: var(--light);
+    padding: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--border-radius);
+}
+
+.task-options ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: .5em;
+}
+
+.task-options li {
+    background: var(--light);
+    text-align: center;
+}

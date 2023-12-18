@@ -1,10 +1,56 @@
 import './App.css'
 
-function App() {
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
+
+// iterface
+import { ITask } from './interfaces/ITask'
+
+import NavBar from './components/navbar/NavBar'
+import Footer from './components/footer/Footer'
+
+import Home from "./pages/home/Home"
+import About from "./pages/about/About"
+import TaskEdit from './components/taskeditandview/TaskEdit'
+import TaskView from './components/taskeditandview/TaskView'
+
+function App() {  
+  const localStorageData: string | null = localStorage.getItem("tasksOfToDoListWithTsAndReact");
+
+  const createLocalStorageItem = () => {
+    localStorage.setItem("tasksOfToDoListWithTsAndReact", "[]");
+  }
+
+  const tasksFromLocalStorage: ITask[] = localStorageData ? JSON.parse(localStorageData) : createLocalStorageItem();
+
+
+  const [tasks, setTasks] = useState<ITask[]>(tasksFromLocalStorage);
+
+  const deleteTask = (taskId: number | undefined): void => {
+    setTasks((prevTasks): ITask[] => {
+            return prevTasks.filter((item) => {
+                return item.id !== taskId
+            })
+    })
+  }
 
   return (
     <>
-      <h1>To Do List</h1>
+      <BrowserRouter>
+        <NavBar />
+        <main>
+          <section>
+            <Routes>
+              <Route path='/' element={<Home tasks={tasks} setTasks={setTasks} deleteTask={deleteTask} />}></Route>
+              <Route path='/edit/:id' element={<TaskEdit tasks={tasks} setTasks={setTasks} />}></Route>
+              <Route path='/view/:id' element={<TaskView tasks={tasks} setTasks={setTasks} />}></Route>
+              <Route path='/search' element={<About />}></Route>
+              <Route path='/about' element={<About />}></Route>
+            </Routes>
+          </section>
+        </main>
+      </BrowserRouter>
+      <Footer />
     </>
   )
 }

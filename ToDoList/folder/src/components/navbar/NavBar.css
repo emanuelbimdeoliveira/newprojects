@@ -1,0 +1,30 @@
+nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: var(--gray);
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+nav form {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    gap: 1px;
+}
+
+nav form input[type=submit] {
+    width: 2em;
+    background: var(--blue);
+    text-align: center;
+}
