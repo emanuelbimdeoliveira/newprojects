@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { useWorkWithTasks } from '../../hooks/useWorkWithTasks';
 
@@ -9,15 +10,28 @@ import "./FormComponent.css"
 interface Props {
     tasks: ITask[]
     setTasks: React.Dispatch<React.SetStateAction<ITask[]>>
+    action: "create" | "edit"
 }
 
-const FormComponent = ({tasks, setTasks}: Props) => {
+const FormComponent = ({tasks, setTasks, action}: Props) => {
+    const taskId = useParams<string>().id;
+    const navigate = useNavigate();
+
     const [task, setTask] = useState<string>("");
-    const [time, setTime] = useState<string>("");
-    const [dificult, setDificult] = useState<number>(5);
+    const [time, setTime] = useState<string | string[]>("");
+    const [dificult, setDificult] = useState<number | null>(5);
+
+    useEffect(() => {
+        tasks.map((item): void => {
+            if (action == "edit" && (item.id == taskId)) {
+                setTask(item.task)
+                setDificult(item.dificult)
+            }
+        })
+    }, []);
 
     // custom hook
-    const {addTask, tasks: actualTasks} = useWorkWithTasks(tasks, setTasks);
+    const {addTask, editTask, tasks: actualTasks} = useWorkWithTasks(tasks, setTasks);
 
     // update localStorage
     useEffect((): void => {
@@ -27,14 +41,40 @@ const FormComponent = ({tasks, setTasks}: Props) => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        addTask({task, time, dificult});
+        if (action == "create") {   
+            addTask({task, time, dificult});
+            
+            setTask("");        
+            setTime("");        
+            setDificult(5);        
+            
+            alert("Tarefa adicionada!")
+        } else {
+            editTask({task, time, dificult}, Number(taskId));
+        }
+    }
+
+    const handleReset = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        if (action == "create") {
+            setTask("");        
+            setTime("");        
+            setDificult(5);        
+        } else {
+            navigate("/");
+        }
     }
 
   return (
-    <form className='form-task' onSubmit={(e) => {handleSubmit(e)}}>
+    <form className='form-task' onSubmit={(e) => {handleSubmit(e)}} onReset={(e) => {handleReset(e)}}>
         <fieldset className='inputs'>
             <label>
-                <p>Nova Tarefa:</p>
+                {action == "create" ? (
+                    <p>Nova Tarefa:</p>
+                ) : (
+                    <p>Novo Nome da Tarefa:</p>
+                )}
                 <input 
                     type="text"
                     required
@@ -45,7 +85,11 @@ const FormComponent = ({tasks, setTasks}: Props) => {
                 />
             </label>
             <label>
-                <p>Data para Conclusão:</p>
+                {action == "create" ? (
+                    <p>Data para Conclusão:</p>
+                ) : (
+                    <p>Nova Data para Conclusão:</p>
+                )}
                 <input 
                     type='datetime-local'
                     required
@@ -71,7 +115,7 @@ const FormComponent = ({tasks, setTasks}: Props) => {
         </fieldset>
         <fieldset className='submits'>
             <input type="reset" className='danger' value="Cancelar" />
-            <input type="submit" className='success' value="Criar" />
+            <input type="submit" className='success' value={action == "create" ? "Criar" : "Editar"} />
         </fieldset>
     </form>
   )

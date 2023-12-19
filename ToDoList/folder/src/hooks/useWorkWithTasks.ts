@@ -4,26 +4,26 @@ import { ITask } from "../interfaces/ITask"
 export const useWorkWithTasks = (tasks: ITask[], setTasks: React.Dispatch<React.SetStateAction<ITask[]>>) => {
     const navigate = useNavigate()
 
-    const addTask = ({task, time, dificult}: ITask): ITask[] | void => {
-        // dealing with dates
-        const dealingWithDates = (dateToWork: Date): string[] => {
-            const fullYear = dateToWork.getFullYear();
-            const month = dateToWork.getMonth() + 1;
-            const day = dateToWork.getDate();
+    // dealing with dates
+    const dealingWithDates = (dateToWork: Date): string[] => {
+        const fullYear = dateToWork.getFullYear();
+        const month = dateToWork.getMonth() + 1;
+        const day = dateToWork.getDate();
 
-            const hour = dateToWork.getHours();
-            const minute = dateToWork.getMinutes();
-            const second = dateToWork.getSeconds();
+        const hour = dateToWork.getHours();
+        const minute = dateToWork.getMinutes();
+        const second = dateToWork.getSeconds();
 
-            // decimal arrange
-            const decimalArrange = (data: number): string => {
-                return String(data).padStart(2, "0");
-            }
-            return [
-                `${decimalArrange(day)}/${decimalArrange(month)}/${fullYear}-${decimalArrange(hour)}:${decimalArrange(minute)}:${decimalArrange(second)}`, String(Date.parse(String(dateToWork))
-            )]
+        // decimal arrange
+        const decimalArrange = (data: number): string => {
+            return String(data).padStart(2, "0");
         }
+        return [
+            `${decimalArrange(day)}/${decimalArrange(month)}/${fullYear}-${decimalArrange(hour)}:${decimalArrange(minute)}:${decimalArrange(second)}`, String(Date.parse(String(dateToWork))
+        )]
+    }
 
+    const addTask = ({task, time, dificult}: ITask): ITask[] | void => {
         // automatic data for this task
         const id: number = Math.floor(Math.random() * 500);
         const isChecked = false;
@@ -56,8 +56,23 @@ export const useWorkWithTasks = (tasks: ITask[], setTasks: React.Dispatch<React.
         })
     }
 
-    const editTask = (taskId: number | undefined) => {
-        navigate(`/edit/${taskId}`)
+    const editTask = ({task, time, dificult}: ITask, taskId: number) => {
+        setTasks((prevTasks) => {
+            return prevTasks.map((item) => {
+                if (item.id == taskId) {
+                    item.task = task;
+                    item.time = dealingWithDates(new Date(String(time)));;
+                    item.createdAt = dealingWithDates(new Date());
+                    item.dificult = dificult;
+
+                    return item
+                } else {
+                    return item
+                }
+            })
+        })
+        alert("Tarefa Atualizada!");
+        navigate("/");
     }
 
     const visualizeTask = (taskId: number | undefined) => {

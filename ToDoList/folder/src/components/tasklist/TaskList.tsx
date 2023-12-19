@@ -2,8 +2,10 @@ import React from 'react'
 
 import { ITask } from '../../interfaces/ITask'
 
-import "./TaskList.css"
 import { useWorkWithTasks } from '../../hooks/useWorkWithTasks'
+import { useNavigate } from 'react-router-dom'
+
+import "./TaskList.css"
 
 interface Props {
     tasks: ITask[]
@@ -13,6 +15,8 @@ interface Props {
 
 const TaskList = ({tasks, setTasks, deleteTask}: Props) => {
     const {check, editTask, visualizeTask} = useWorkWithTasks(tasks, setTasks);
+
+    const navigate = useNavigate();
 
   return (
     <ul className='list'>
@@ -25,12 +29,11 @@ const TaskList = ({tasks, setTasks, deleteTask}: Props) => {
                             <h2>{taskData.task}</h2>
                         </label>
                     </form>
-                    {/* <p>Data para conclusão: {taskData.time}</p> */}
                     <div className='task-options'>
                         <p className='center'>Opções da Tarefa</p>
                         <ul>
                             <li><i onClick={() => deleteTask(taskData.id)}>d</i></li>
-                            <li><i onClick={() => editTask(taskData.id)}>e</i></li>
+                            <li><i onClick={() => navigate(`edit/${taskData.id}`)}>e</i></li>
                             <li><i onClick={() => visualizeTask(taskData.id)}>v</i></li>
                         </ul>
                     </div>

@@ -17,7 +17,7 @@ const Home = ({tasks, setTasks, deleteTask}: Props) => {
   return (
     <section className='home'>
         <h1>To Do List</h1>
-        <FormComponent tasks={tasks} setTasks={setTasks}/>
+        <FormComponent tasks={tasks} setTasks={setTasks} action='create' />
         <TaskList tasks={tasks} setTasks={setTasks} deleteTask={deleteTask}/>
     </section>
   )
