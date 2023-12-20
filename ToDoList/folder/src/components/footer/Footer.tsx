@@ -2,12 +2,10 @@ import React from 'react'
 
 import "./Footer.css"
 
-type Props = {}
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <footer>
-        <h2>To Do List 2023</h2>
+        <p>To Do List 2023</p>
         <p>React + TypeScript</p>
     </footer>
   )

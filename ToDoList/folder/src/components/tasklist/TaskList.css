@@ -2,6 +2,8 @@
     display: flex;
     gap: .5em;
     align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
 }
 
 .list, .task-options ul {
@@ -32,4 +34,22 @@
 .task-options li {
     background: var(--light);
     text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+    .task-options ul {
+        background: transparent;
+        gap: .5em;
+        padding: .1em;
+    }
+
+    .task-options li {
+        background: transparent;
+        font-size: .5em;
+    }   
+
+    .list-item form label p {
+        font-size: .9em;
+        padding: 0;
+    }
 }

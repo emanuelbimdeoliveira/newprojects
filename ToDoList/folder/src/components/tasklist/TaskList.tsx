@@ -10,11 +10,10 @@ import "./TaskList.css"
 interface Props {
     tasks: ITask[]
     setTasks: React.Dispatch<React.SetStateAction<ITask[]>>
-    deleteTask: (taskId: number | undefined) => void
 }
 
-const TaskList = ({tasks, setTasks, deleteTask}: Props) => {
-    const {check, editTask, visualizeTask} = useWorkWithTasks(tasks, setTasks);
+const TaskList = ({tasks, setTasks}: Props) => {
+    const {check, deleteTask, visualizeTask} = useWorkWithTasks(tasks, setTasks);
 
     const navigate = useNavigate();
 
@@ -26,15 +25,15 @@ const TaskList = ({tasks, setTasks, deleteTask}: Props) => {
                     <form>
                         <label>
                             <input type="checkbox" name={taskData.task} id={taskData.task} onChange={(e) => check(e, taskData.id)} checked={taskData.isChecked}/>
-                            <h2>{taskData.task}</h2>
+                            <p>{taskData.task}</p>
                         </label>
                     </form>
                     <div className='task-options'>
                         <p className='center'>Opções da Tarefa</p>
                         <ul>
-                            <li><i onClick={() => deleteTask(taskData.id)}>d</i></li>
-                            <li><i onClick={() => navigate(`edit/${taskData.id}`)}>e</i></li>
-                            <li><i onClick={() => visualizeTask(taskData.id)}>v</i></li>
+                            <li><i onClick={() => deleteTask(taskData.id)} className='material-symbols-outlined'>delete</i></li>
+                            <li><i onClick={() => navigate(`edit/${taskData.id}`)} className='material-symbols-outlined'>edit</i></li>
+                            <li><i onClick={() => visualizeTask(taskData.id)} className='material-symbols-outlined'>visibility</i></li>
                         </ul>
                     </div>
                 </li>

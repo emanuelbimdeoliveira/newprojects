@@ -21,15 +21,6 @@ const FormComponent = ({tasks, setTasks, action}: Props) => {
     const [time, setTime] = useState<string | string[]>("");
     const [dificult, setDificult] = useState<number | null>(5);
 
-    useEffect(() => {
-        tasks.map((item): void => {
-            if (action == "edit" && (item.id == taskId)) {
-                setTask(item.task)
-                setDificult(item.dificult)
-            }
-        })
-    }, []);
-
     // custom hook
     const {addTask, editTask, tasks: actualTasks} = useWorkWithTasks(tasks, setTasks);
 
@@ -37,6 +28,17 @@ const FormComponent = ({tasks, setTasks, action}: Props) => {
     useEffect((): void => {
         localStorage.setItem("tasksOfToDoListWithTsAndReact", JSON.stringify(actualTasks))
     }, [actualTasks])
+
+    if (action == "edit") {
+        useEffect(() => {
+            tasks.map((item): void => {
+                if (item.id == taskId) {
+                    setTask(item.task)
+                    setDificult(item.dificult)
+                }
+            })
+        }, []);
+    }
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -115,7 +117,7 @@ const FormComponent = ({tasks, setTasks, action}: Props) => {
         </fieldset>
         <fieldset className='submits'>
             <input type="reset" className='danger' value="Cancelar" />
-            <input type="submit" className='success' value={action == "create" ? "Criar" : "Editar"} />
+            <input type="submit" className='success' value={action == "create" ? "Criar" : "Salvar"} />
         </fieldset>
     </form>
   )

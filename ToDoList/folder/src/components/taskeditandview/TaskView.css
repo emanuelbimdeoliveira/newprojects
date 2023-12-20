@@ -1,5 +1,6 @@
 .view-task {
     position: relative;
+    margin-top: 3em;
 }
 
 .view-task, .task-data, aside, .more-data {
@@ -25,6 +26,12 @@
     flex-direction: row;
 }
 
+.task-data-small {
+    display: none;
+    flex-direction: column;
+    gap: .5em;
+}
+
 aside {
     background: var(--light-low);
     align-items: flex-start;   
@@ -33,4 +40,14 @@ aside {
 .more-data {
     background: var(--light);
     margin-top: 1em;
+}
+
+@media screen and (max-width: 700px) {
+    .task-data {
+        display: none;
+    }
+
+    .task-data-small {
+        display: flex;
+    }
 }

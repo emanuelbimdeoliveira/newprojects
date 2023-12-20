@@ -26,14 +26,6 @@ function App() {
 
   const [tasks, setTasks] = useState<ITask[]>(tasksFromLocalStorage);
 
-  const deleteTask = (taskId: number | undefined): void => {
-    setTasks((prevTasks): ITask[] => {
-            return prevTasks.filter((item) => {
-                return item.id !== taskId
-            })
-    })
-  }
-
   return (
     <>
       <BrowserRouter>
@@ -41,11 +33,12 @@ function App() {
         <main>
           <section>
             <Routes>
-              <Route path='/' element={<Home tasks={tasks} setTasks={setTasks} deleteTask={deleteTask} />}></Route>
+              <Route path='/' element={<Home tasks={tasks} setTasks={setTasks} />}></Route>
               <Route path='/edit/:id' element={<TaskEdit tasks={tasks} setTasks={setTasks} />}></Route>
               <Route path='/view/:id' element={<TaskView tasks={tasks} setTasks={setTasks} />}></Route>
               <Route path='/search' element={<About />}></Route>
               <Route path='/about' element={<About />}></Route>
+              <Route path='*' element={<Home tasks={tasks} setTasks={setTasks}/>}></Route>
             </Routes>
           </section>
         </main>

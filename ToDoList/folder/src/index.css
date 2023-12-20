@@ -28,7 +28,7 @@ input[type=reset] {
 }
 
 input[type=submit]:hover,
-input[type=reset]:hover {   
+input[type=reset]:hover, div > a:hover, aside a:hover {   
      transform: scale(1.05);
 }
 
@@ -44,14 +44,25 @@ i:hover {
 
 .back-link {
     text-decoration: none;
-    background: var(--blue) !important;
-    color: white;
     position: absolute;
     top: 1em;
     left: 1em;
+    transition-duration: .2s;
+}
+
+.back-link:hover {
+    transform: scale(1.05);
 }
 
 .danger {
     background: #800;
     border: solid 2px #c00;
+}
+
+@media screen and (max-width: 700px) {
+    .success, .danger {
+        padding: .5em;
+    }
+
+
 }

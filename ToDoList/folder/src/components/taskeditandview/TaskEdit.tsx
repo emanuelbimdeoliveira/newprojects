@@ -4,7 +4,7 @@ import { ITask } from '../../interfaces/ITask'
 
 import FormComponent from '../form/FormComponent'
 
-import { useParams } from 'react-router-dom'
+import "./TaskEdit.css"
 
 interface Props {
     tasks: ITask[]
@@ -12,12 +12,9 @@ interface Props {
 }
     
 const TaskEdit = ({tasks, setTasks}: Props) => {
-  const taskId = useParams<string>().id;
-
   return (
-    <section className='modal'>
-        <section className='modal-content'>
-            <h2>Editar Tarefa numero {taskId}</h2>
+    <section>
+        <section className='task-edit'>
             <FormComponent tasks={tasks} setTasks={setTasks} action='edit'/>
         </section>
     </section>

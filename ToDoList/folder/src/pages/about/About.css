@@ -1,0 +1,27 @@
+.about-content {
+    background: var(--light-low);
+    padding: var(--padding);
+    margin-top: 1em;
+    border-radius: var(--border-radius);
+    text-align: left;
+}
+
+.about-content p, .about-content ul, .about-content ol {
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    list-style-type: none;
+}
+
+.about-content ul {
+    background: var(--light);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.about-content ol li {
+    background: var(--light-low);
+    border-radius: var(--border-radius);
+    padding: .5em;
+    margin: .5em auto;
+}

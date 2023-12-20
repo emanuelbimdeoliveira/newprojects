@@ -40,9 +40,10 @@ export const useWorkWithTasks = (tasks: ITask[], setTasks: React.Dispatch<React.
             isChecked
         }
 
-        return taskObject && setTasks([...tasks, taskObject])
+        return setTasks([...tasks, taskObject])
     }
 
+    // function to do the checking on checkbox
     const check = (e: React.ChangeEvent<HTMLInputElement>, taskId: number | undefined): void => {
         setTasks((prevTasks) => {
             return prevTasks.map((item) => {
@@ -75,9 +76,19 @@ export const useWorkWithTasks = (tasks: ITask[], setTasks: React.Dispatch<React.
         navigate("/");
     }
 
+    const deleteTask = (taskId: number | undefined): void => {
+        if (confirm("Deseja realmente excluir essa Tarefa?")) {
+            setTasks((prevTasks): ITask[] => {
+                return prevTasks.filter((item) => {
+                    return item.id !== taskId
+                })
+            })
+        }
+    }
+
     const visualizeTask = (taskId: number | undefined) => {
         navigate(`/view/${taskId}`)
     }
 
-    return {addTask, check, editTask, visualizeTask, tasks}
+    return {addTask, deleteTask, check, editTask, visualizeTask, tasks}
 }

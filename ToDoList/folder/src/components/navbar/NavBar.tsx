@@ -1,20 +1,35 @@
-import React from 'react'
 
 import { NavLink } from 'react-router-dom'
 
 import "./NavBar.css"
 
-type Props = {}
-
-const NavBar = (props: Props) => {
+const NavBar = () => {
   return (
     <nav>
-        <NavLink to={"/"}><p>To Do List</p></NavLink>
-        <form>
-            <input type="text" placeholder='Buscar Tarefa'/>
-            <input type="submit" value="B" />
-        </form>
-        <NavLink to={"/about"}><p>Sobre</p></NavLink>
+        <NavLink to={"/"}>
+            <i className='material-symbols-outlined'>home</i>
+        </NavLink>
+        <div className='normal-menu'>
+          <a href="">Repositório</a>
+          <a href="">Mais Projetos</a>
+          <a href="">Portifólio</a>
+          <NavLink to={"/about"}><p>Sobre</p></NavLink>
+        </div>
+        <div className='small-menu'>
+          <label htmlFor="menu-toggle">
+            <i className='material-symbols-outlined'>menu</i>
+          </label>
+          <input type="checkbox" name="menu-toggle" id="menu-toggle" />
+          <aside className="sidebar">
+            <label htmlFor="menu-toggle">
+              <i className='material-symbols-outlined'>menu</i>
+            </label>
+            <a href="">Repositório</a>
+            <a href="">Mais Projetos</a>
+            <a href="">Portifólio</a>
+            <NavLink to={"/about"}><p>Sobre</p></NavLink>
+          </aside>
+        </div>
     </nav>
   )
 }

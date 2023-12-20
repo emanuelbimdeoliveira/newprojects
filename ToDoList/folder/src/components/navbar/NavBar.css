@@ -15,16 +15,46 @@ nav a {
     text-decoration: none;
 }
 
-nav form {
-    width: 50%;
+nav .normal-menu {
     display: flex;
-    justify-content: center;
-    align-items: center;   
-    gap: 1px;
+    justify-content: space-around;
+    gap: 1em;
+    align-items: center;
 }
 
-nav form input[type=submit] {
-    width: 2em;
-    background: var(--blue);
-    text-align: center;
+nav .small-menu {
+    display: none;
+    color: white;
+}
+
+nav .small-menu input {
+    display: none;
+}
+
+.sidebar {
+    background: var(--gray);
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: end;
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 1em;
+}
+
+nav .small-menu input:checked ~ .sidebar {
+    display: flex;
+}
+
+
+@media screen and (max-width: 700px) {
+    nav .normal-menu {
+        display: none;
+    }
+
+    nav .small-menu {
+        display: block;
+    }
 }
