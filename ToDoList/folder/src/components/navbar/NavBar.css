@@ -42,6 +42,7 @@ nav .small-menu input {
     top: 0;
     right: 0;
     font-size: 1em;
+    z-index: 10;
 }
 
 nav .small-menu input:checked ~ .sidebar {

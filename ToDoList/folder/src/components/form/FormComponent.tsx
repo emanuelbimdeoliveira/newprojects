@@ -110,7 +110,7 @@ const FormComponent = ({tasks, setTasks, action}: Props) => {
                     min={1}
                     autoComplete='true'
                     step={1}
-                    value={dificult}
+                    value={dificult ?? 0}
                     onChange={(e) => setDificult(Number(e.target.value))}
                 />
             </label>
