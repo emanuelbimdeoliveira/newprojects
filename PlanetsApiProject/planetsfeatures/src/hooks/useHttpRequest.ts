@@ -6,6 +6,8 @@ export const useHttpRequest = () => {
     const [data, setData] = useState<IData[] | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
     
+    const apiKey = import.meta.env.VITE_API_KEY;
+
     const getApiResponse = async (requestName?: string, request?: {requestType: string, min: number, max: number}) => {
         let url = "https://api.api-ninjas.com/v1/planets?";
         
@@ -29,7 +31,7 @@ export const useHttpRequest = () => {
             const responseJson: Response = await fetch(url, {
                 method: "GET",
                 headers: {
-                    'X-Api-Key': 'w7LHRhOGabfiqOkhl8k/Zw==cDrVv7qlJfDlRm9J',
+                    'X-Api-Key': apiKey,
                     "Content-type": "application/json"
                 },
             });

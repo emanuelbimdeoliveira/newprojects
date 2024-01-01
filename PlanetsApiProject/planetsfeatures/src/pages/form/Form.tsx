@@ -15,7 +15,7 @@ export type typesOfRequest = {
 
 const Form = () => {
     const [selectedOption, setSelectedOption] = useState<string>("solarSistem");
-    const [planetOption, setPlanetOption] = useState<string>("");
+    const [planetOption, setPlanetOption] = useState<string>("earth");
 
     const {getApiResponse, loading, data} = useHttpRequest();
 
