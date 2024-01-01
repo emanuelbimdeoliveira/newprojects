@@ -2,9 +2,8 @@
 import { Link } from "react-router-dom"
 import "./Home.css"
 
-type Props = {}
 
-const Home = (props: Props) => {
+const Home = () => {
   return (
     <section className='home'>
         <article className="titles">
