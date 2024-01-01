@@ -1,0 +1,40 @@
+.form {
+    height: 100%;
+}
+
+.form form {
+    width: 100%;
+}
+
+.form, .form fieldset {
+    color: var(--blue-5);
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5em;
+}
+
+.form fieldset {
+    border: none;
+    gap: 1em;
+}
+
+.form select, .form select option {
+    background: var(--blue-4);
+    width: 80%;
+    color: var(--blue-1);
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+}
+
+.form label {
+    width: 100%;
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}

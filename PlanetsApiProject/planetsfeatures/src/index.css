@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'REM', sans-serif;
+  font-family: 'Trispace', sans-serif;
+
+  color: var(--blue-5);
+}
+
+:root {
+  --blue-1: #02052B;
+  --blue-2: #0B115C;
+  --blue-3: #1B24CD;
+  --blue-4: #07FFEE;
+  --blue-5: #77FFEE;
+  --padding: 1em 3em;
+  --border-bottom: solid 2px var(--blue-4);
+  --border-radius: 5px;
+  --box-shadow: 5px 5px 5px #0005;
+}
+
+body {
+  background: linear-gradient(10deg, var(--blue-2), var(--blue-3));
+  min-height: 100vh;
+}
+
+#root, main {
+  height: 100%;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+p, li {
+  font-size: 1.2em;
+}
+
+a, input[type=submit] {
+  background: var(--blue-4);
+  width: 80%;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  border: none;
+  outline: none;
+  color: var(--blue-1);
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+a:hover, input:hover, select:hover {
+  outline: solid var(--blue-1) 3px;
+}
+
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 2.5em;
+  }
+
+  :root {
+    --padding: .5em 1em;   
+  }
+
+  input[type=submit] {
+    padding: 1em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 2em;
+  }
+}
