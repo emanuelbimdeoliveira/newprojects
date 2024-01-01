@@ -1,4 +1,6 @@
 
+import { NavLink } from "react-router-dom"
+
 import "./About.css"
 
 const About = () => {
@@ -19,6 +21,7 @@ const About = () => {
           </ol>
         </ul>
       </section>
+        <NavLink to={"/"} className='back-link'><span className='material-symbols-outlined'>arrow_back</span></NavLink>
     </>
   )
 }

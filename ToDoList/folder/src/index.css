@@ -44,9 +44,7 @@ i:hover {
 
 .back-link {
     text-decoration: none;
-    position: absolute;
-    top: 1em;
-    left: 1em;
+    margin: 1em auto;
     transition-duration: .2s;
 }
 
