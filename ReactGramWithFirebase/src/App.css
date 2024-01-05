@@ -1,0 +1,7 @@
+main {
+  width: 100%;
+  min-height: 80vh;
+  background: var(--black-1);
+  padding: var(--padding);
+  padding-top: 3em;
+}

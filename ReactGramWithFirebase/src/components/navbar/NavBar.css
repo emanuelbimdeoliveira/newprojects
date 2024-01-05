@@ -1,0 +1,48 @@
+.nav-bar, .nav-bar-sm {
+    background: var(--black-2);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2em;
+}
+
+.nav-bar-sm {
+    display: none;
+}
+
+.nav-bar-sm nav {
+    background: var(--black-2);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: end;
+}
+
+.nav-bar-sm nav a {
+    width: 100%;
+}
+
+input#check {
+    display: none;
+}
+
+input#check:checked ~ nav {
+    display: flex;
+}
+
+@media screen and (max-width: 800px) {
+ .nav-bar {
+    display: none;
+ }   
+
+ .nav-bar-sm {
+    display: flex;
+ }
+}

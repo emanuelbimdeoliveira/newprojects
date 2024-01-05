@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+}
+
+:root {
+  --black-1: #000;
+  --black-2: #222;
+  --black-3: #444;
+  --yellow-1: linear-gradient(180deg, #fd0, #f90);
+  --white: #eee;
+  --padding: 1em 2em;
+  --padding-low: .5em 1em;
+  --border-radius: 5px;
+  --border: ridge 2px var(--white);
+  --gap: 2em;
+  --font-size-sm: 1rem;
+  --font-size-md: 1.5rem;
+  --font-size-lg: 2rem;
+  --font-size-xl: 2.5rem;
+}
+
+body {
+  background: var(--black-1);
+  color: var(--white);
+  min-height: 100vh;
+  line-height: 2em;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  font-size: var(--font-size-lg);
+}
+
+p {
+  font-size: var(--font-size-md);
+}
+
+.button {
+  background: var(--yellow-1) !important;
+  width: min-content;
+  padding: var(--padding-low);
+  border-radius: var(--border-radius);
+  border: none !important;
+  color: var(--black-1) !important;
+  font-size: var(--font-size-sm) !important;
+}
+
+i {
+  padding: var(--padding-low);
+}
+
+.button-danger:hover {
+  background: linear-gradient(180deg, #f00, #800) !important;
+  color: var(--white) !important;
+}
+
+.button-success:hover {
+  background: linear-gradient(180deg, #0f0, #080) !important;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center;
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+  padding: var(--padding);
+}
+
+a:hover,
+.button:hover {
+  transform: scale(1.1);
+}
+
+.active {
+  background: var(--yellow-1);
+  color: var(--black-1);
+}
+
+section {
+  background: var(--black-2);
+  max-width: 1000px;
+  margin: 3em auto;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  border: var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  border-radius: var(--border-radius);
+}
+ 
+@media screen and (max-width: 700px) {
+  :root {
+    --padding: .5em 1em;
+    --font-size-md: 1em
+    --font-size-lg: 1.5em
+  }
+}

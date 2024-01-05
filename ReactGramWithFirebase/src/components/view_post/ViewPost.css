@@ -1,0 +1,55 @@
+.post-view {
+    background: var(--black-1);
+    width: 100%;
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+.like {
+    width: min-content;
+    background: transparent;
+    padding: var(--padding-low);
+    border-radius: var(--border-radius);
+    color: var(--white);
+    border: none;
+    font-size: var(--font-size-sm) !important;
+}
+
+.comment-list {
+    background: var(--black-2);
+    width: 100%;
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    list-style-type: none;
+}
+
+.comment-list li {
+    border-bottom: var(--border);
+    border-radius: var(--border-radius);
+    margin: 1em auto;
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+}
+
+.comment-text {
+    font-size: var(--font-size-md);
+}
+
+.form-comment {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-comment {
+    background: var(--black-2);
+    width: 60%;
+    color: var(--black);
+    padding: var(--padding);
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    border-bottom: var(--border);
+}

@@ -1,0 +1,28 @@
+.form fieldset, .form div, .form label {
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--gap);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: none;
+}
+
+.form {
+    background: var(--black-1);
+}
+
+.form label {
+    background: var(--black-2);
+}
+
+.form input {
+    background: transparent;
+    color: var(--black);
+    padding: var(--padding);
+    border: none;
+    outline: none;
+    border-bottom: var(--border);
+}
+
