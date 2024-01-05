@@ -1,5 +1,3 @@
-import { db } from "../../../services/firebaseConfig";
-import { deleteDoc, doc, updateDoc } from "firebase/firestore";
 
 import { useState } from "react";
 
@@ -8,6 +6,8 @@ import { useGetContext } from "../../context/FirebaseAuth";
 import { IComment, IPost } from "../../interfaces/IPost";
 
 import "./ViewPost.css";
+
+import { useWorkWithPost } from "../../hooks/useWorkWithPost";
 
 type Props = {
   post: IPost;
@@ -19,39 +19,7 @@ const ViewPost = ({ post, action }: Props) => {
 
   const { stateOfUser } = useGetContext();
 
-  // any only here because of firebase
-  const postDoc: any = post;
-
-  const addComment = async () => {
-    post.comments = [...post.comments, comment!];
-    await updateDoc(doc(db, "posts", post.id), postDoc);
-  };
-
-  const deleteComment = async (comment: string) => {
-    if (confirm("Deseja excluir esse comentário?")) {
-      post.comments = post.comments.filter((item: IComment) => {
-        return item.comment !== comment;
-      });
-      await updateDoc(doc(db, "posts", post.id), postDoc);
-    }
-  };
-
-  const likeThisPost = async (id: string) => {
-    if (!post.likes.includes(stateOfUser!.email)) {
-      post.likes = !post.likes
-        ? [stateOfUser!.email]
-        : [...post.likes, stateOfUser!.email];
-      await updateDoc(doc(db, "posts", id), postDoc);
-    } else {
-      alert("Voçê já deu o like!");
-    }
-  };
-
-  const deletePost = async (id: string) => {
-    if (confirm("Deseja excluir esta postagem?")) {
-      await deleteDoc(doc(db, "posts", id));
-    }
-  };
+  const {addComment, deleteComment, likeThisPost, deletePost} = useWorkWithPost(post);
 
   return (
     <section className="post-view">
@@ -63,7 +31,7 @@ const ViewPost = ({ post, action }: Props) => {
           <p>Criado por: {post.user}</p>
           <button
             className="like button-success"
-            onClick={() => likeThisPost(post.id)}
+            onClick={() => likeThisPost(post, post.id)}
           >
             <i className="material-symbols-outlined">thumb_up</i> {post.likes.length}
           </button>
@@ -81,7 +49,7 @@ const ViewPost = ({ post, action }: Props) => {
                     <p className="comment-user-name">{item.user}</p>
                     {item.user == stateOfUser!.email && (
                       <button
-                        onClick={() => deleteComment(item.comment)}
+                        onClick={() => deleteComment(post, item.comment)}
                         className="button button-danger"
                       >
                         Excluir
@@ -93,7 +61,7 @@ const ViewPost = ({ post, action }: Props) => {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  addComment();
+                  addComment(post, comment!);
                 }}
                 className="form-comment"
               >
@@ -121,7 +89,7 @@ const ViewPost = ({ post, action }: Props) => {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  addComment();
+                  addComment(post, comment!);
                 }}
                 className="form-comment"
               >

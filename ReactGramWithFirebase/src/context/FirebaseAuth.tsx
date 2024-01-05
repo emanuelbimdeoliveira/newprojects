@@ -26,7 +26,6 @@ export const FirebaseAuthProvider = ({ children }: { children: ReactNode }) => {
   auth.languageCode = "it";
 
   const login = () => {
-
     signInWithPopup(auth, provider)
       .then((result) => {
         // const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -36,7 +35,7 @@ export const FirebaseAuthProvider = ({ children }: { children: ReactNode }) => {
         setStateOfUser({ user });
 
         localStorage.setItem("user-reactgram", JSON.stringify(user));
-        window.location.reload()
+        window.location.reload();
       })
       .catch((error) => {
         const errorCode = error.code;
