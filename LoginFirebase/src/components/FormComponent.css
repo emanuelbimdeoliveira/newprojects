@@ -1,0 +1,43 @@
+form, fieldset, .flex-column, .buttons {
+    width: 100%;
+    padding: var(--padding);
+    padding-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+form fieldset {
+    border: none;
+}
+
+input, button {
+    background: var(--white);
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    color: black;
+    border: none;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input:hover, button:hover {
+    background: var(--white-2);
+    transform: scale(1.03);
+}
+
+input[type=text] {
+    width: 100%;
+}
+
+form .buttons {
+    flex-direction: row;    
+}
+
+form .buttons > button {
+    width: 50%;
+}
