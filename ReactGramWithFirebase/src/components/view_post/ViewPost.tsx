@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 import { useGetContext } from "../../context/FirebaseAuth";
@@ -19,7 +18,8 @@ const ViewPost = ({ post, action }: Props) => {
 
   const { stateOfUser } = useGetContext();
 
-  const {addComment, deleteComment, likeThisPost, deletePost} = useWorkWithPost(post);
+  const { addComment, deleteComment, likeThisPost, deletePost } =
+    useWorkWithPost(post);
 
   return (
     <section className="post-view">
@@ -33,7 +33,8 @@ const ViewPost = ({ post, action }: Props) => {
             className="like button-success"
             onClick={() => likeThisPost(post, post.id)}
           >
-            <i className="material-symbols-outlined">thumb_up</i> {post.likes.length}
+            <i className="material-symbols-outlined">thumb_up</i>{" "}
+            {post.likes.length}
           </button>
         </>
       )}
