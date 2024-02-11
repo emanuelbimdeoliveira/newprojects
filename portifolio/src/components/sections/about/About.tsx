@@ -16,9 +16,7 @@ const About = () => {
           </article>
           <figure className="image">
             <img
-              src="
-              
-              "
+              src="https://github.com/emanuelbimdeoliveira/newprojects/blob/main/portfolioIMG/profile-image-2.jpg?raw=true"
               alt="profile-image"
             />
           </figure>
