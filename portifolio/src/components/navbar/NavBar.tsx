@@ -27,7 +27,7 @@ const NavBar = () => {
       <nav className="navbar-lg">
         <div className="branch">
           <a href="#">
-            <img src="./branch-orange.png" alt="branch" />
+            <img src="https://github.com/emanuelbimdeoliveira/newprojects/blob/main/portfolioIMG/Programador%20(1).jpg?raw=true" alt="branch" />
           </a>
           <button
             onClick={() => {
