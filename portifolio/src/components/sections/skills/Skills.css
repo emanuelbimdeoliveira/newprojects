@@ -1,0 +1,51 @@
+.skills {
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--gap);
+    text-align: center;
+    min-height: 100vh;    
+}
+
+.skills .icons {
+    width: 100%;    
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: var(--gap);
+}
+
+.skills i {
+    background: var(--skills-background);
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding-low);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    font-size: var(--font-lg);
+}
+
+.skills i img {
+    width: 42px;
+}
+
+.skills h1 {
+    font-size: var(--font-md);
+}
+
+.skills .description {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 300px;
+}
+
+@media screen and (max-width: 700px) {
+    .skills i {
+        width: 100px;
+        height: 100px;
+    }
+}

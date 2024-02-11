@@ -1,0 +1,43 @@
+.projects {
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--gap);
+    text-align: center;
+    min-height: 100vh;
+}
+
+.projects h1 {
+    font-size: var(--font-md);
+}
+
+.cards-container {
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: var(--gap);
+}
+
+.card {
+    width: 30%;
+    padding: 0;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.card img {
+    border-radius: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+    .cards-container {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 80%;
+    }
+}

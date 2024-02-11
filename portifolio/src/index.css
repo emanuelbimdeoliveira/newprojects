@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Afacad', sans-serif;
+}
+
+:root {
+    --gray-1: #1f1f1f;
+    --gray-2: #35353f;
+    --silver-1: #a0a0a5;
+    --silver-2: #bfb8cf;
+    --orange-1: #ff540a;
+    --orange-2: #ff8a05;
+    --white: #efefef;
+    --black: #101010;
+    --gray-background: linear-gradient(180deg, var(--gray-2), var(--gray-1));
+    --orange-background: linear-gradient(180deg, var(--orange-2), var(--orange-1));
+    --silver-background: linear-gradient(180deg, var(--silver-2), var(--silver-1));
+    --font-color: var(--white); 
+    --font-contrast-color: var(--gray-1);
+    --background-color: var(--orange-background);
+    --main-background: #fffa;
+    --skills-background: var(--orange-background);
+    --padding: 1em;
+    --padding-low: .5em;
+    --border-radius: 10px;
+    --border: solid 2px var(--font-color);
+    --shadow: 5px 5px 10px #0005;
+    --gap-sm: .5em; 
+    --gap: 1em; 
+    --font-sm: 1.3em;
+    --font-md: 2em;
+    --font-lg: 3em;
+    --font-xlg: 4em;
+}
+
+::-webkit-scrollbar {
+    background: var(--background-color);
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--font-contrast-color);
+    border-radius: var(--border-radius);
+}
+
+body {
+    background: white url("/background-white.jpg") center fixed;
+}
+
+main {
+    background: var(--main-background);
+    padding-top: 4em;
+}
+
+main > section {
+    max-width: 1200px;
+    margin: auto;
+}
+
+section, article, figure {
+    padding: var(--padding);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+h1, h2, p {
+    color: var(--font-contrast-color);
+}
+
+p {
+    font-size: var(--font-md);
+}
+
+a, button, input[type=submit] {
+    background: transparent;
+    color: var(--font-color);
+    padding: var(--padding);
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: var(--font-sm);
+    cursor: pointer;
+}
+
+a, button, .card, i, li, input {
+    transition: .3s ease;
+}
+
+.success {
+    background: linear-gradient(180deg, #0f0, #0a0) !important;
+    border-radius: var(--border-radius);
+    padding: var(--padding-low) !important;
+    color: var(--gray-1) !important;
+}
+
+a:hover, button:hover, .card:hover, i:hover, li:hover, input:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding);
+}
+
+footer {
+    background: var(--background-color);   
+    color: var(--font-color);
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
+}
+
+footer h1, footer p {
+    color: var(--font-color);
+    font-size: var(--font-md);    
+}
+
+footer p {
+    text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+    :root {
+        --padding: var(--padding-low);
+        --font-sm: 1em;
+        --font-md: 1.5em;
+        --font-lg: 2em;
+        --font-xlg: 3em;    
+    }
+}

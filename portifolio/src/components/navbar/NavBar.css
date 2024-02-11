@@ -1,0 +1,90 @@
+.navbar-lg,
+.navbar-lg .branch,
+.navbar-lg .links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-lg {
+  background: var(--background-color);
+  width: 100%;
+  justify-content: space-between;
+
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.navbar-lg .branch {
+  justify-content: center;
+  gap: var(--gap);
+}
+
+.branch img {
+  width: 2em;
+  border: solid 2px black;
+  border-radius: 50%;
+}
+
+nav button {
+  font-size: 1em;
+}
+
+.navbar-lg .links {
+  width: 40%;
+  justify-content: space-around;
+}
+
+.links a {
+  width: 25%;
+  color: var(--font-color);
+}
+
+nav i {
+  color: var(--font-color);
+  padding: 0 1em;
+  font-size: var(--font-sm);
+}
+
+.sidebar {
+  background: var(--background-color);
+  display: none;
+  padding: 10px 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: end;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+label {
+  display: none;
+}
+
+input:checked ~ .sidebar {
+  display: flex;
+}
+
+@media screen and (max-width: 1000px) {
+  .navbar-lg .links {
+    width: 70%;
+  }
+
+  .branch span {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .navbar-lg .links {
+    display: none;
+  }
+
+  label {
+    display: block;
+  }
+}
