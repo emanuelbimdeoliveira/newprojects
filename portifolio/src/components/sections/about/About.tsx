@@ -12,7 +12,7 @@ const About = () => {
             <p>Eu sou programador Front-End e desenvolvo sites e aplicações web usando as melhores tecnologias do mercado atualmente</p>
           </article>
           <figure className="image">
-            <img src="./profile-image.jpg" alt="profile-image" />
+            <img src="https://github.com/emanuelbimdeoliveira/newprojects/blob/main/portfolio-img/profile-image.jpg?raw=true" alt="profile-image" />
           </figure>
         </section>
       </Fade>

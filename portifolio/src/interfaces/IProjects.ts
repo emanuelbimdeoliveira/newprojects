@@ -3,6 +3,7 @@ export interface IProjects {
   description: string;
   stack: string;
   createdAt: number;
+  urlImage: string;
   linkToProject: string;
   linkToGitHub: string;
   ranking: number;

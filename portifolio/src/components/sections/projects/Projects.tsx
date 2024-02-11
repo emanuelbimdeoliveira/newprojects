@@ -1,39 +1,16 @@
 import { Fade } from "react-awesome-reveal";
 
-import { useEffect, useState } from "react";
-
-import { IProjects } from "../../../interfaces/IProjects";
-import { collection, DocumentData, getDocs, orderBy, query, where } from 'firebase/firestore';
-import { db } from "../../../firebase-config/firebaseConfig";
-
+import { useEffect } from "react";
 
 import "./Projects.css";
+import { useFetchData } from "../../../hooks/useFetchData";
 
 const Projects = () => {
-  const [projects, setProjects] = useState<IProjects[]>([]);
+  const { fetchProjects, projects } = useFetchData();
 
   useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const projectsCollection = collection(db, "projects");
-        const projectsSnapshot = await query(projectsCollection, where("stack", "==", "react"), orderBy("createdAt", "desc"));
-
-        const snapShot = await getDocs(projectsSnapshot);
-
-        const projectsData = snapShot.docs.map((doc: DocumentData) => ({
-          id: doc.id,
-          ...doc.data(),
-        })) as IProjects[];
-
-        setProjects(projectsData);
-        console.log(projects)
-      } catch (error) {
-        console.error("Erro ao buscar projetos:", error);
-      }
-    };
-
     fetchProjects();
-  }, []); 
+  }, []);
 
   return (
     <section className="projects" id="projects">
@@ -44,13 +21,17 @@ const Projects = () => {
             projects.map((item, index) => (
               <div className="card" key={index}>
                 <img
-                  src={item.linkToProject}
+                  src={item.urlImage}
                   alt={item.projectName}
                   onClick={() => window.open(`${item.linkToProject}`, "_blank")}
                 />
                 <p>{item.projectName}</p>
                 <div className="buttons">
-                  <a href={item.linkToProject} target="_blank" className={"success"}>
+                  <a
+                    href={item.linkToProject}
+                    target="_blank"
+                    className={"success"}
+                  >
                     Ver Projeto
                   </a>
                   <a
