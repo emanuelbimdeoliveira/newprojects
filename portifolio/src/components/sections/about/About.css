@@ -8,6 +8,7 @@
 
 .bio {
   flex-direction: column;
+  max-width: 60%;
   justify-content: center;
   gap: var(--gap);
   align-items: flex-start;
@@ -25,24 +26,25 @@
 
 .bio p {
   font-size: var(--font-md);
+  margin: 10px 0;
 }
 
-.image {
+.image div {
+  display: flex;
   justify-content: center;
 }
 
-.image img {
+.image .img {
   border-radius: 100%;
-  width: 50%;
+  width: 80%;
   box-shadow: var(--shadow);
 }
 
 @media screen and (max-width: 1000px) {
-  .image img {
-    width: 80%;
+  .image .img {
+    width: 100%;
   }
 }
-
 
 @media screen and (max-width: 700px) {
   .about-me {
@@ -51,19 +53,33 @@
     align-items: flex-start;
   }
 
+  .bio {
+    max-width: none;
+    width: 100%;
+  }
+
   .bio h1 {
     font-size: var(--font-lg);
   }
 
-  .bio h2, .bio p {
+  .bio h2,
+  .bio p {
     font-size: var(--font-md);
   }
 
-  .image {
+  .bio .ocultable {
+    display: none;
+  }
+
+  .bio button {
+    margin: 1em 0 !important;
+  }
+
+  .image div {
     justify-content: flex-start;
   }
 
-  .image img {
-    width: 30%;
+  .image .img {
+    width: 50%;
   }
 }

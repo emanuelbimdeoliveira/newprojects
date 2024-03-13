@@ -1,5 +1,5 @@
 .navbar-lg,
-.navbar-lg .branch,
+.navbar-lg .brand,
 .navbar-lg .links {
   display: flex;
   align-items: center;
@@ -16,15 +16,14 @@
   overflow: hidden;
 }
 
-.navbar-lg .branch {
+.navbar-lg .brand {
   justify-content: center;
   gap: var(--gap);
 }
 
-.branch img {
+.brand img {
   width: 2em;
-  border: solid 2px black;
-  border-radius: 50%;
+  border-radius: 10px;
 }
 
 nav button {
@@ -59,6 +58,8 @@ nav i {
   top: 0;
   right: 0;
   z-index: 10;
+  font-size: var(--font-sm);
+  font-weight: 800;
 }
 
 label {
@@ -67,15 +68,12 @@ label {
 
 input:checked ~ .sidebar {
   display: flex;
+  width: 50%;
 }
 
 @media screen and (max-width: 1000px) {
   .navbar-lg .links {
     width: 70%;
-  }
-
-  .branch span {
-    display: none;
   }
 }
 

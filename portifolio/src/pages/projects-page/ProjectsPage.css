@@ -1,0 +1,21 @@
+.projects-page select {
+  width: 50%;
+  margin: auto;
+  background: var(--background-color);
+  color: var(--font-color);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  font-size: var(--font-sm);
+}
+
+.projects-page option {
+  background: var(--gray-1);
+  color: var(--font-color);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+}
+
+.projects-page > button {
+  width: 50%;
+  margin: 1em auto;
+}

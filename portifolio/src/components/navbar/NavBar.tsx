@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { darkTheme, lightTheme, propertiesArray } from "../../mini_db/db";
 
+import { useNavigate } from "react-router-dom";
+
 import "./NavBar.css";
 
 const NavBar = () => {
   const [theme, setTheme] = useState<string>("light");
+
+  const navigate = useNavigate();
 
   const changeTheme = () => {
     const root: any = document.querySelector(":root");
@@ -25,9 +29,9 @@ const NavBar = () => {
   return (
     <>
       <nav className="navbar-lg">
-        <div className="branch">
-          <a href="#">
-            <img src="https://github.com/emanuelbimdeoliveira/newprojects/blob/main/portfolioIMG/Programador%20(1).jpg?raw=true" alt="branch" />
+        <div className="brand">
+          <a onClick={() => navigate("/")}>
+            <i className="fa-solid fa-home"></i>
           </a>
           <button
             onClick={() => {
@@ -48,10 +52,10 @@ const NavBar = () => {
           </button>
         </div>
         <div className="links">
-          <a href="#about">Sobre</a>
-          <a href="#projects">Projetos</a>
-          <a href="#skills">Habilidades</a>
-          <a href="#contact">Contato</a>
+          <a onClick={() => navigate("/about")}>Sobre</a>
+          <a onClick={() => navigate("/projects")}>Projetos</a>
+          <a onClick={() => navigate("/skills")}>Habilidades</a>
+          <a onClick={() => navigate("/contact")}>Contato</a>
         </div>
         <label htmlFor="sidebar">
           <i className="fa-solid fa-bars"></i>
@@ -63,10 +67,11 @@ const NavBar = () => {
         <label htmlFor="sidebar">
           <i className="fa-solid fa-bars"></i>
         </label>
-        <a href="#about">Sobre</a>
-        <a href="#projects">Projetos</a>
-        <a href="#skills">Habilidades</a>
-        <a href="#contact">Contato</a>
+        <a onClick={() => navigate("/")}>Home</a>
+        <a onClick={() => navigate("/about")}>Sobre</a>
+        <a onClick={() => navigate("/projects")}>Projetos</a>
+        <a onClick={() => navigate("/skills")}>Habilidades</a>
+        <a onClick={() => navigate("/contact")}>Contato</a>
       </nav>
     </>
   );

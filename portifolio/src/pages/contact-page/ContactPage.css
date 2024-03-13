@@ -1,0 +1,22 @@
+.contact-page {
+  width: 100%;
+  flex-direction: column;
+  min-height: 70vh;
+  text-align: center;
+}
+
+.contact-page h2 {
+  font-size: var(--font-md);
+  text-align: center;
+  margin: 1em 0;
+}
+
+.contact-page a {
+  font-size: 1em;
+  color: var(--orange-1);
+  text-decoration: underline;
+}
+
+.contact-page p {
+  margin: 0.5em 0;
+}

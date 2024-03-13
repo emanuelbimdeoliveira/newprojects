@@ -3,6 +3,7 @@ import {
   collection,
   DocumentData,
   getDocs,
+  limit,
   orderBy,
   query,
   where,
@@ -12,14 +13,20 @@ import { useState } from "react";
 
 export const useFetchData = () => {
   const [projects, setProjects] = useState<IProjects[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const fetchProjects = async () => {
+  const fetchProjects = async (
+    limitOfLoanding: number | undefined,
+    filter?: string
+  ) => {
+    setLoading(true);
     try {
       const projectsCollection = collection(db, "projects");
       const projectsSnapshot = await query(
         projectsCollection,
-        where("stack", "array-contains", "all"),
-        orderBy("createdAt", "desc")
+        where("stack", "array-contains", filter || "all"),
+        orderBy("createdAt", "desc"),
+        limit(limitOfLoanding!)
       );
 
       const snapShot = await getDocs(projectsSnapshot);
@@ -32,6 +39,7 @@ export const useFetchData = () => {
     } catch (error) {
       console.error("Erro ao buscar projetos:", error);
     }
+    setLoading(false);
   };
-  return { fetchProjects, projects };
+  return { fetchProjects, projects, loading };
 };

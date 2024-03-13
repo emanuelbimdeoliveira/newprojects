@@ -24,19 +24,31 @@ const Skills = () => {
           <i className="fa-brands fa-git"></i>
           <i className="fa-brands fa-react"></i>
         </Fade>
-        <Fade direction="up">
+        <Fade>
           <i className="fa-brands fa-npm"></i>
           <i className="fa-solid fa-terminal"></i>
           <i>
             <img
-              src="https://github.com/emanuelbimdeoliveira/newprojects/blob/main/portfolio-img/typeScript-icon.png?raw=true"
+              src="https://github.com/emanuelbimdeoliveira/newprojects/blob/main/portfolioIMG/typeScript-icon.png?raw=true"
               alt="typeScript"
+            />
+          </i>
+        </Fade>
+        <Fade direction="up">
+          <i className="fa-brands fa-wordpress"></i>
+          <i className="fa-brands fa-elementor"></i>
+          <i>
+            <img
+              src="
+              ./icon-firebase.png
+              "
+              alt="firebase"
             />
           </i>
         </Fade>
       </article>
       <article className="description">
-        <h1>{skillDescription!.title}</h1>
+        <h2>{skillDescription!.title}</h2>
         <p>{skillDescription!.description}</p>
       </article>
     </section>
