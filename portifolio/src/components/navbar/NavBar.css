@@ -9,7 +9,6 @@
   background: var(--background-color);
   width: 100%;
   justify-content: space-between;
-
   position: fixed;
   top: 0;
   z-index: 5;
@@ -19,19 +18,17 @@
 .navbar-lg .brand {
   justify-content: center;
   gap: var(--gap);
+  padding: 0;
 }
 
 .brand img {
   width: 2em;
-  border-radius: 10px;
-}
-
-nav button {
-  font-size: 1em;
+  border-radius: 100%;
 }
 
 .navbar-lg .links {
-  width: 40%;
+  width: 60%;
+  padding: 0;
   justify-content: space-around;
 }
 
@@ -43,32 +40,27 @@ nav button {
 nav i {
   color: var(--font-color);
   padding: 0 1em;
+}
+
+select#menu {
+  background: transparent;
+  padding: 0 var(--padding);
+  display: none;
+  border: none;
+  outline: none;
+  color: var(--font-color);
   font-size: var(--font-sm);
 }
 
-.sidebar {
-  background: var(--background-color);
-  display: none;
-  padding: 10px 0;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: end;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 10;
-  font-size: var(--font-sm);
-  font-weight: 800;
+#menu option {
+  color: var(--font-color) !important;
+  background: var(--gray-1);
 }
 
-label {
-  display: none;
-}
-
-input:checked ~ .sidebar {
-  display: flex;
-  width: 50%;
+#menu option:checked,
+#menu option:hover {
+  color: var(--gray-1) !important;
+  background: var(--white);
 }
 
 @media screen and (max-width: 1000px) {
@@ -78,11 +70,17 @@ input:checked ~ .sidebar {
 }
 
 @media screen and (max-width: 700px) {
+  .navbar-lg {
+    padding: 1.2em var(--padding);
+    font-size: var(--font-sm);
+    font-weight: 600;
+  }
+
   .navbar-lg .links {
     display: none;
   }
 
-  label {
+  select#menu {
     display: block;
   }
 }

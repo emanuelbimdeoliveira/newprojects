@@ -1,10 +1,8 @@
 import { Fade } from "react-awesome-reveal";
 import "./About.css";
-import { useNavigate } from "react-router-dom";
 import PreloadImg from "../../PreLoadImg";
 
 const About = () => {
-  const navigate = useNavigate();
 
   return (
     <>
@@ -22,14 +20,20 @@ const About = () => {
             <button
               className="success"
               onClick={() => {
-                navigate("/about");
+                window.open(
+                  "https://api.whatsapp.com/send?phone=5542999818385",
+                  "_blank"
+                );
               }}
             >
-              Mais informações
+              Contato <i className="fa-brands fa-whatsapp"></i>
             </button>
           </article>
           <figure className="image">
-            <PreloadImg src="https://github.com/emanuelbimdeoliveira/newprojects/blob/main/portfolioIMG/profile-image.jpg?raw=true" className="img" />
+            <PreloadImg
+              src="https://github.com/emanuelbimdeoliveira/newprojects/blob/main/portfolioIMG/profile-image.jpg?raw=true"
+              className="img"
+            />
           </figure>
         </section>
       </Fade>

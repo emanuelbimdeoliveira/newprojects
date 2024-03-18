@@ -9,3 +9,7 @@
 .projects h1 {
   font-size: var(--font-md);
 }
+
+.projects button {
+  width: 100%;
+}

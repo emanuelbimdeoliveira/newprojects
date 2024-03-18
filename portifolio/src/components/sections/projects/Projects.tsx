@@ -19,7 +19,7 @@ const Projects = () => {
 
   return (
     <section className="projects" id="projects">
-      <Fade cascade={true}>
+      <Fade cascade={true} duration={300}>
         <h1>Projetos</h1>
         {loading && <p className="loading">Carregando...</p>}
         <Card projects={projects} />

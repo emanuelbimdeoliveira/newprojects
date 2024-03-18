@@ -58,13 +58,13 @@ export const descriptionArray = [
   {
     title: "WordPress",
     description:
-      "O WordPress é uma plataforma de gerenciamento de conteúdo amplamente utilizada por blogueiros, empresas e desenvolvedores web. Com uma interface intuitiva e uma ampla variedade de temas e plugins disponíveis, o WordPress permite que você crie e personalize facilmente sites de qualquer tipo ou tamanho.",
+      "O WordPress é uma plataforma de gerenciamento de conteúdo amplamente utilizada por blogueiros, empresas e desenvolvedores web. Com uma interface intuitiva e uma ampla variedade de temas e plugins disponíveis.",
     iconCode: "fa-brands fa-wordpress",
   },
   {
     title: "Elementor",
     description:
-      "O Elementor é um construtor de páginas visual para WordPress, projetado para simplificar o processo de design e personalização de sites. Com uma interface de arrastar e soltar intuitiva, o Elementor permite que você crie layouts complexos e visualmente impressionantes sem a necessidade de codificação.",
+      "O Elementor é um construtor de páginas visual para WordPress, projetado para simplificar o processo de design e personalização de sites. Com uma interface de arrastar e soltar intuitiva ele permite que você crie layouts complexos sem a necessidade de codificação.",
     iconCode: "fa-brands fa-elementor",
   },
   {
@@ -77,7 +77,7 @@ export const descriptionArray = [
   {
     title: "Descrição",
     description:
-      "Posicione o Mouse sobre cada habilidade para mais informações!",
+      "Posicione o Mouse ou clique sobre cada habilidade para mais informações!",
     iconCode: "fa-brands",
   },
 ];
@@ -104,7 +104,7 @@ export const darkTheme = [
 export const lightTheme = [
   "var(--orange-background)",
   "var(--white)",
-  "#fffa",
+  "#ddda",
   "var(--orange-background)",
   "var(--gray-1)",
   "5px 5px 10px #0005",

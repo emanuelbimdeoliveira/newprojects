@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { darkTheme, lightTheme, propertiesArray } from "../../mini_db/db";
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import "./NavBar.css";
 
@@ -9,6 +9,19 @@ const NavBar = () => {
   const [theme, setTheme] = useState<string>("light");
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigate = (e?: string, linkTo?: string) => {
+    const navigateTo = e || linkTo;
+
+    if (location.pathname === "/") {
+      document
+        .querySelector(navigateTo!.slice(1))
+        ?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(navigateTo!);
+    }
+  };
 
   const changeTheme = () => {
     const root: any = document.querySelector(":root");
@@ -30,9 +43,9 @@ const NavBar = () => {
     <>
       <nav className="navbar-lg">
         <div className="brand">
-          <a onClick={() => navigate("/")}>
-            <i className="fa-solid fa-home"></i>
-          </a>
+          {/* <a onClick={() => navigate("/")}> */}
+          {/* <img src="./Programador.jpg" alt="logo" /> */}
+          {/* </a> */}
           <button
             onClick={() => {
               changeTheme();
@@ -52,26 +65,32 @@ const NavBar = () => {
           </button>
         </div>
         <div className="links">
-          <a onClick={() => navigate("/about")}>Sobre</a>
-          <a onClick={() => navigate("/projects")}>Projetos</a>
-          <a onClick={() => navigate("/skills")}>Habilidades</a>
-          <a onClick={() => navigate("/contact")}>Contato</a>
+          <button onClick={() => handleNavigate(undefined, "/#about")}>
+            Sobre
+          </button>
+          <button onClick={() => handleNavigate(undefined, "/#projects")}>
+            Projetos
+          </button>
+          <button onClick={() => handleNavigate(undefined, "/#skills")}>
+            Habilidades
+          </button>
+          <button onClick={() => handleNavigate(undefined, "/#contact")}>
+            Contato
+          </button>
         </div>
-        <label htmlFor="sidebar">
-          <i className="fa-solid fa-bars"></i>
-        </label>
-      </nav>
-
-      <input type="checkbox" name="sidebar" id="sidebar" />
-      <nav className="sidebar">
-        <label htmlFor="sidebar">
-          <i className="fa-solid fa-bars"></i>
-        </label>
-        <a onClick={() => navigate("/")}>Home</a>
-        <a onClick={() => navigate("/about")}>Sobre</a>
-        <a onClick={() => navigate("/projects")}>Projetos</a>
-        <a onClick={() => navigate("/skills")}>Habilidades</a>
-        <a onClick={() => navigate("/contact")}>Contato</a>
+        <select
+          name="menu"
+          id="menu"
+          onChange={(e) => handleNavigate(e.target.value)}
+        >
+          <option value="#" aria-disabled>
+            Menu
+          </option>
+          <option value="/#about">Sobre</option>
+          <option value="/#projects">Projetos</option>
+          <option value="/#skills">Habilidades</option>
+          <option value="/#contact">Contato</option>
+        </select>
       </nav>
     </>
   );

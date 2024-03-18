@@ -13,7 +13,7 @@
   --silver-2: #bfb8cf;
   --orange-1: #ff540a;
   --orange-2: #ff8a05;
-  --white: #efefef;
+  --white: #fff;
   --black: #101010;
   --gray-background: linear-gradient(180deg, var(--gray-2), var(--gray-1));
   --orange-background: linear-gradient(
@@ -29,7 +29,7 @@
   --font-color: var(--white);
   --font-contrast-color: var(--gray-1);
   --background-color: var(--orange-background);
-  --main-background: #fffa;
+  --main-background: #ddda;
   --skills-background: var(--orange-background);
   --padding: 1em;
   --padding-low: 0.5em;
@@ -38,7 +38,7 @@
   --shadow: 5px 5px 10px #0005;
   --gap-sm: 0.5em;
   --gap: 1em;
-  --font-sm: 1.3em;
+  --font-sm: 1.5em;
   --font-md: 2em;
   --font-lg: 3em;
   --font-xlg: 4em;
@@ -113,7 +113,8 @@ button,
 .card,
 i,
 li,
-input {
+input,
+.contact > div {
   transition: 0.3s ease;
 }
 
@@ -122,6 +123,7 @@ input {
   border-radius: var(--border-radius);
   padding: var(--padding-low) !important;
   color: var(--gray-1) !important;
+  font-weight: 600;
 }
 
 .loading {
@@ -137,7 +139,8 @@ button:hover,
 .card:hover,
 i:hover,
 li:hover,
-input:hover {
+input:hover,
+.contact > div:hover {
   transform: scale(1.06);
   cursor: pointer;
 }
