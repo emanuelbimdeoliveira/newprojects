@@ -9,7 +9,7 @@ type Props = {
 };
 
 const Card = ({ projects, action }: Props) => {
-
+  console.log(projects);
   return (
     <article className="cards-container">
       {projects &&
@@ -18,9 +18,22 @@ const Card = ({ projects, action }: Props) => {
             className={action == "projects-page" ? "card-lg" : "card"}
             key={index}
           >
-             <PreloadImg src={item.urlImage} className="img" alt={item.projectName}/>
+            <PreloadImg
+              src={item.urlImage}
+              className="img"
+              alt={item.projectName}
+            />
             <h2>{item.projectName}</h2>
-            {action && <p>{item.description}</p>}
+            {action && (
+              <>
+                <p>{item.description}</p>
+                <p>{`Desenvolvido em: ${String(item.createdAt).substring(
+                  6
+                )}/${String(item.createdAt).substring(4, 6)}/${String(
+                  item.createdAt
+                ).substring(0, 4)}`}</p>
+              </>
+            )}
             <div className="buttons">
               <a
                 href={item.linkToProject}

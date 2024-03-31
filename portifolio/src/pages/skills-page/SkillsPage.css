@@ -3,6 +3,10 @@
   margin-bottom: 0.5em;
 }
 
+.skills-page article {
+  margin-bottom: 2em;
+}
+
 .skills-page .first-section {
   width: 100%;
   display: flex;
@@ -33,20 +37,31 @@
   margin: 1em 0;
 }
 
+.skills-page button {
+  margin: auto;
+}
+
 @media screen and (max-width: 700px) {
+  .skills-page article {
+    align-items: center;
+    justify-content: center;
+  }
+
   .first-section {
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
 
   .skills-page div {
     width: 100%;
   }
 
-  .text-div {
+  .skills-page .text-div {
     max-width: none;
     width: 100%;
+    text-align: center;
   }
 
   .icon-div {
@@ -54,5 +69,9 @@
     width: 190px !important;
     height: 190px !important;
     font-size: 100px !important;
+  }
+
+  .skills-page .progress-text {
+    text-align: center;
   }
 }

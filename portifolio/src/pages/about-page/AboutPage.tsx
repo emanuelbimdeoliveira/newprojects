@@ -1,7 +1,9 @@
 import PreloadImg from "../../components/PreLoadImg";
+import { useNavigateFunction } from "../../hooks/useNavigateFunction";
 import "./AboutPage.css";
 
 const AboutPage = () => {
+  const { navigate } = useNavigateFunction();
   return (
     <section className="about-page">
       <h1>Emanuel Bim</h1>
@@ -27,19 +29,7 @@ const AboutPage = () => {
             </p>
           </div>
           <div className="img-div">
-            <PreloadImg
-              src="https://github.com/emanuelbimdeoliveira/newprojects/blob/main/portfolioIMG/profile-image-1.jpg?raw=true"
-              className="img"
-              alt="emanuel"
-            />
-            {/* 
-            <img
-              src="
-              https://github.com/emanuelbimdeoliveira/newprojects/blob/main/portfolioIMG/profile-image-1.jpg?raw=true
-              "
-              alt="profile-image"
-            />
-             */}
+            <PreloadImg src="./profile-img.webp" className="img" alt="emanuel" />
           </div>
         </div>
 
@@ -64,14 +54,6 @@ const AboutPage = () => {
           className="img"
           alt="code-background"
         />
-        {/* 
-        <img
-          src="
-          https://github.com/emanuelbimdeoliveira/newprojects/blob/main/portfolioIMG/code-background-2.jpg?raw=true
-          "
-          alt="code"
-        />
- */}
       </article>
       <article>
         <h2>Minha história:</h2>
@@ -96,20 +78,10 @@ const AboutPage = () => {
           </div>
           <div className="img-div">
             <PreloadImg
-              src="
-              https://github.com/emanuelbimdeoliveira/newprojects/blob/main/portfolioIMG/profile-image.jpg?raw=true
-              "
+              src="./profile-img-2.png"
               className="img"
               alt="emanuel"
             />
-            {/* 
-            <img
-              src="
-              https://github.com/emanuelbimdeoliveira/newprojects/blob/main/portfolioIMG/profile-image.jpg?raw=true
-              "
-              alt="profile-image"
-            />
- */}
           </div>
         </div>
         <p>
@@ -147,20 +119,13 @@ const AboutPage = () => {
           descoberta e realização pessoal.
         </p>
         <PreloadImg
-          src="
-              https://github.com/emanuelbimdeoliveira/newprojects/blob/main/portfolioIMG/code-background-1.jpg?raw=true
-              "
+          src="https://github.com/emanuelbimdeoliveira/newprojects/blob/main/portfolioIMG/code-background-1.jpg?raw=true"
           className="img"
-          alt="emanuel"
-        />
-        {/* 
-        <img
-          src="
-          https://github.com/emanuelbimdeoliveira/newprojects/blob/main/portfolioIMG/code-background-1.jpg?raw=true
-          "
           alt="code"
         />
- */}
+        <button className="success" onClick={() => navigate("/contact")}>
+          Entrar em contato
+        </button>
       </article>
     </section>
   );

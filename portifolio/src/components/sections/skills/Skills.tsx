@@ -2,9 +2,12 @@ import "./Skills.css";
 
 import { useHandleShowSkill } from "../../../hooks/useShowSkill";
 import { Fade } from "react-awesome-reveal";
+import { useNavigateFunction } from "../../../hooks/useNavigateFunction";
 
 const Skills = () => {
   const { handleShowSkill, skillDescription } = useHandleShowSkill();
+
+  const { navigate } = useNavigateFunction();
 
   setTimeout(() => {
     handleShowSkill();
@@ -51,6 +54,9 @@ const Skills = () => {
         <h2>{skillDescription!.title}</h2>
         <p>{skillDescription!.description}</p>
       </article>
+      <button className="success" onClick={() => navigate("/skills")}>
+        Ver mais detalhes
+      </button>
     </section>
   );
 };

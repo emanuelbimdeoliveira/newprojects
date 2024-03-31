@@ -50,7 +50,7 @@ const Contact = ({ action }: Props) => {
         <div
           onClick={() => {
             window.open(
-              "https://www.instagram.com/emanuelbim2023?utm_source=qr&igsh=dWJtM3VnY2FpaWIx",
+              "https://www.instagram.com/programadoremanuelbim?utm_source=qr&igsh=OXQ4a2d5djNiY29z",
               "_blank"
             );
           }}

@@ -37,7 +37,7 @@
 .image .img {
   border-radius: 100%;
   width: 80%;
-  box-shadow: var(--shadow);
+  margin: auto;
 }
 
 .bio button {

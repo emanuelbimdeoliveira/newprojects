@@ -90,22 +90,93 @@ export const propertiesArray = [
   "--skills-background",
   "--font-contrast-color",
   "--shadow",
+  "--font-color-footer-bellow",
+  "--button-background",
+  "--button-color",
 ];
 
-export const darkTheme = [
-  "var(--gray-background)",
-  "var(--orange-1)",
-  "#181818e8",
-  "var(--white)",
-  "var(--orange-1)",
-  "5px 5px 10px black",
-];
+export const themes = {
+  darkTheme: [
+    "var(--gray-background)",
+    "var(--orange-1)",
+    "#181818e8",
+    "var(--white)",
+    "var(--orange-1)",
+    "5px 5px 10px black",
+    "var(--orange-1)",
+    "var(--white)",
+    "var(--gray-1)",
+  ],
 
-export const lightTheme = [
-  "var(--orange-background)",
-  "var(--white)",
-  "#ddda",
-  "var(--orange-background)",
-  "var(--gray-1)",
-  "5px 5px 10px #0005",
-];
+  lightTheme: [
+    "var(--orange-background)",
+    "var(--white)",
+    "#ddda",
+    "var(--orange-background)",
+    "var(--gray-1)",
+    "5px 5px 10px #0005",
+    "var(--white)",
+    "linear-gradient(180deg, #00FA00, #0f9f0f)",
+    "var(--gray-1)",
+  ],
+
+  blueTheme: [
+    "linear-gradient(180deg, #40DBD1, #0f8f8f)",
+    "#0F3D3D",
+    "#ddda",
+    "linear-gradient(180deg, #40DBD1, #0f8f8f)",
+    "#0F3D3D",
+    "5px 5px 10px #0005",
+    "var(--white)",
+    "linear-gradient(180deg, #40DBD1, #0f8f8f)",
+    "#0F3D3D",
+  ],
+
+  greenTheme: [
+    "linear-gradient(180deg, #00FA00, #0f9f0f)",
+    "#355035",
+    "#ddda",
+    "linear-gradient(180deg, #00FA00, #0f9f0f)",
+    "#355035",
+    "5px 5px 10px #0005",
+    "var(--white)",
+    "linear-gradient(180deg, #00FA00, #0f9f0f)",
+    "#355035",
+  ],
+
+  yellowTheme: [
+    "linear-gradient(180deg, #0000EE, #0f0f7f)",
+    "yellow",
+    "#ff0c",
+    "linear-gradient(180deg, #0000EE, #0f0f7f)",
+    "blue",
+    "5px 5px 10px #0005",
+    "var(--white)",
+    "linear-gradient(180deg, #0000EE, #0f0f7f)",
+    "yellow",
+  ],
+
+  redTheme: [
+    "linear-gradient(180deg, #ff0000, #800000)",
+    "#1A0303",
+    "#ddda",
+    "linear-gradient(180deg, #ff0000, #800000)",
+    "#1A0303",
+    "5px 5px 10px #0005",
+    "var(--white)",
+    "linear-gradient(180deg, #ff0000, #800000)",
+    "#1A0303",
+  ],
+
+  purpleTheme: [
+    "linear-gradient(180deg, #a08, #880044)",
+    "#ffff0e",
+    "#ff0c",
+    "linear-gradient(180deg, #a08, #880044)",
+    "#880044",
+    "5px 5px 10px #0005",
+    "var(--white)",
+    "linear-gradient(180deg, #a08, #880044)",
+    "#ffff0e",
+  ],
+};

@@ -46,8 +46,8 @@
   margin: 1em auto;
 }
 
-button.success {
-  width: 60%;
+.card a {
+  width: 90%;
   margin: 2em 0;
 }
 

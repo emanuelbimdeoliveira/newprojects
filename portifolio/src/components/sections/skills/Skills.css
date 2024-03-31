@@ -44,12 +44,15 @@
 .skills .description {
   flex-direction: column;
   flex-wrap: nowrap;
-  height: 300px;
 }
 
 @media screen and (max-width: 700px) {
   .skills i {
     width: 100px;
     height: 100px;
+  }
+
+  .skills i img {
+    width: 28px;
   }
 }

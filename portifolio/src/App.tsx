@@ -15,11 +15,11 @@ import ContactPage from "./pages/contact-page/ContactPage";
 function App() {
   return (
     <>
-        <BrowserRouter>
-      <header>
-        <NavBar />
-      </header>
-      <main>
+      <BrowserRouter>
+        <header>
+          <NavBar />
+        </header>
+        <main>
           <Routes>
             <Route
               path="/"
@@ -31,15 +31,15 @@ function App() {
                 </>
               }
             />
-            <Route path="/about" element={<AboutPage />}/>
-            <Route path="/projects" element={<ProjectsPage />}/>
-            <Route path="/skills" element={<SkillsPage />}/>
-            <Route path="/contact" element={<ContactPage />}/>
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/skills" element={<SkillsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
           </Routes>
-      </main>
-        </BrowserRouter>
+        </main>
+      </BrowserRouter>
       <footer>
-        <Contact action="footer"/>
+        <Contact action="footer" />
       </footer>
     </>
   );

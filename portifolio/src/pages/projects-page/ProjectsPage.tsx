@@ -19,12 +19,14 @@ const ProjectsPage = () => {
       <h1>Meus Projetos</h1>
       <select
         name="filter"
+        aria-label="filter project"
         id="filter"
         onChange={(e) => {
           setValue(e.target.value);
           fetchProjects(limitOfLoad, value);
         }}
       >
+        <option value="all">Todos</option>
         <option value="wordpress">WordPress</option>
         <option value="html">HTML</option>
         <option value="css">CSS</option>

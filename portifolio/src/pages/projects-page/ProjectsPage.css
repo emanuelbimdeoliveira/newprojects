@@ -4,15 +4,24 @@
   background: var(--background-color);
   color: var(--font-color);
   border-radius: var(--border-radius);
-  padding: var(--padding);
+  padding: var(--padding-low);
   font-size: var(--font-sm);
 }
 
 .projects-page option {
+  color: var(--font-color-footer-bellow) !important;
   background: var(--gray-1);
-  color: var(--font-color);
   border-radius: var(--border-radius);
   padding: var(--padding);
+}
+
+.projects-page option:checked {
+  color: var(--gray-1) !important;
+  background: var(--white);
+}
+
+.projects-page a {
+  width: 75%;
 }
 
 .projects-page > button {

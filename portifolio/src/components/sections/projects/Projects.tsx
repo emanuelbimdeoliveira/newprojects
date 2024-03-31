@@ -2,14 +2,14 @@ import { Fade } from "react-awesome-reveal";
 
 import { useEffect } from "react";
 import { useFetchData } from "../../../hooks/useFetchData";
-import { useNavigate } from "react-router-dom";
 
 import Card from "../../cards-container/Card";
 
 import "./Projects.css";
+import { useNavigateFunction } from "../../../hooks/useNavigateFunction";
 
 const Projects = () => {
-  const navigate = useNavigate();
+  const { navigate } = useNavigateFunction();
 
   const { fetchProjects, projects, loading } = useFetchData();
 

@@ -1,12 +1,16 @@
-import { Fade } from "react-awesome-reveal";
 import "./About.css";
-import PreloadImg from "../../PreLoadImg";
+import { useLoading } from "../../../hooks/useLoading";
 
 const About = () => {
+  const { loading } = useLoading();
 
   return (
     <>
-      <Fade>
+      {loading ? (
+        <section className="about-me" id="about">
+          <p style={{ margin: "auto", fontFamily: "arial" }}>Carregando...</p>
+        </section>
+      ) : (
         <section className="about-me" id="about">
           <article className="bio">
             <h2>Olá, meu nome é</h2>
@@ -30,13 +34,10 @@ const About = () => {
             </button>
           </article>
           <figure className="image">
-            <PreloadImg
-              src="https://github.com/emanuelbimdeoliveira/newprojects/blob/main/portfolioIMG/profile-image.jpg?raw=true"
-              className="img"
-            />
+            <img src="./profile-img.webp" alt="emanuel" className="img" />
           </figure>
         </section>
-      </Fade>
+      )}
     </>
   );
 };

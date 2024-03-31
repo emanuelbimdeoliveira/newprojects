@@ -1,7 +1,11 @@
+import { useNavigateFunction } from "../../hooks/useNavigateFunction";
 import { descriptionArray } from "../../mini_db/db";
+
 import "./SkillsPage.css";
 
 const SkillsPage = () => {
+  const { navigate } = useNavigateFunction();
+
   return (
     <section className="skills-page">
       <h1>Habilidades</h1>
@@ -22,7 +26,7 @@ const SkillsPage = () => {
             </article>
           )
       )}
-      
+
       <article className="progress-text">
         <h2>Meu progresso</h2>
         <p>
@@ -79,6 +83,9 @@ const SkillsPage = () => {
           web.
         </p>
       </article>
+      <button className="success" onClick={() => navigate("/about")}>
+        Mais informações
+      </button>
     </section>
   );
 };

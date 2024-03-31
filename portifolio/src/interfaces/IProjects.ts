@@ -1,7 +1,7 @@
 export interface IProjects {
   projectName: string;
   description: string;
-  stack: string;
+  stack: string[];
   createdAt: number;
   urlImage: string;
   linkToProject: string;

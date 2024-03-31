@@ -11,9 +11,9 @@
   --gray-2: #35353f;
   --silver-1: #a0a0a5;
   --silver-2: #bfb8cf;
-  --orange-1: #ff540a;
-  --orange-2: #ff8a05;
-  --white: #fff;
+  --orange-1: #ff240a;
+  --orange-2: #ff7a05;
+  --white: #eaeaea;
   --black: #101010;
   --gray-background: linear-gradient(180deg, var(--gray-2), var(--gray-1));
   --orange-background: linear-gradient(
@@ -28,6 +28,10 @@
   );
   --font-color: var(--white);
   --font-contrast-color: var(--gray-1);
+  --button-background: linear-gradient(180deg, #00fa00, #0f9f0f);
+  --button-color: var(--gray-1);
+  --font-color-footer-bellow: var(--white);
+  --text-shadow: 1.3px 1.3px 0 black;
   --background-color: var(--orange-background);
   --main-background: #ddda;
   --skills-background: var(--orange-background);
@@ -61,7 +65,7 @@ body {
 
 main {
   background: var(--main-background);
-  padding-top: 4em;
+  padding: 4em 0 2em;
 }
 
 main > section {
@@ -115,15 +119,20 @@ i,
 li,
 input,
 .contact > div {
-  transition: 0.3s ease;
+  transition: 0.2s ease;
+}
+
+button,
+select {
+  font-weight: 600;
 }
 
 .success {
-  background: linear-gradient(180deg, #0f0, #0a0) !important;
+  background: var(--button-background) !important;
   border-radius: var(--border-radius);
   padding: var(--padding-low) !important;
-  color: var(--gray-1) !important;
-  font-weight: 600;
+  color: var(--button-color) !important;
+  box-shadow: var(--shadow);
 }
 
 .loading {
@@ -141,7 +150,7 @@ i:hover,
 li:hover,
 input:hover,
 .contact > div:hover {
-  transform: scale(1.06);
+  transform: scale(0.95);
   cursor: pointer;
 }
 
@@ -162,14 +171,14 @@ footer {
   gap: var(--gap);
 }
 
-footer h1,
-footer p {
+footer h1 {
   color: var(--font-color);
   font-size: var(--font-md);
 }
 
 footer p {
   text-align: center;
+  color: var(--font-color-footer-bellow);
 }
 
 @media screen and (max-width: 700px) {
