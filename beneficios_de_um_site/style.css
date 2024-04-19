@@ -255,10 +255,6 @@ footer a:hover {
     display: none;
   }
 
-  div.header_mobile {
-    display: flex;
-  }
-
   button {
     display: block !important;
   }
