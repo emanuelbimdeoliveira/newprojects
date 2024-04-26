@@ -1,0 +1,12 @@
+.bg-silver {
+  background: linear-gradient(180deg, #eee, #bbb);
+}
+
+.bg-blue {
+  background: linear-gradient(180deg, #f00, #500);
+}
+
+.text-bg-blue {
+  color: #eee;
+}
+
