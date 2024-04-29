@@ -1,0 +1,91 @@
+body {
+  background: #eda;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: #ecf;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #380140;
+}
+
+.row::-webkit-scrollbar {
+  display: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Passion One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.bg {
+  background: linear-gradient(0deg, #380140, #450f4f);
+}
+
+.main-bg {
+  background: #eef;
+}
+
+.text-bg {
+  color: #ecf;
+}
+
+.text-bg-contrast {
+  color: #1e0126;
+}
+
+.carousel-caption {
+  bottom: 20% !important;
+}
+
+.row {
+  padding: 3em 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+img {
+  width: 100%;
+  border: 5px solid #eef;
+  border: none;
+}
+
+.carousel img {
+  filter: opacity(0.5);
+}
+
+@media screen and (min-width: 850px) {
+  .row {
+    padding: 8em 0 !important;
+  }
+
+  .carousel-caption {
+    bottom: 50% !important;
+  }
+
+  img {
+    border: 5px solid #ecf;
+  }
+
+  #about {
+    background: url("../public/background.png") no-repeat;
+    background-size: cover;
+  }
+
+  #history {
+    background: url("../public/left-background.png") no-repeat;
+    background-size: cover;
+  }
+}
