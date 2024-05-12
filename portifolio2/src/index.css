@@ -1,0 +1,112 @@
+* {
+  text-decoration: none;
+  font-family: "Afacad", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background-color: linear-gradient(180deg, #220001, #100000);
+  --font-color: #f8fffa;
+  --font-contrast-color: #220001;
+  --font-contrast-button: #220001;
+  --main-background: #ddda;
+}
+
+::-webkit-scrollbar {
+  background-color: var(--font-color);
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--background-color);
+}
+
+#cards_container::-webkit-scrollbar {
+  display: none;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+main {
+  background-color: var(--main-background);
+  margin-top: 4.5em;
+}
+
+.bg {
+  background: var(--background-color);
+}
+
+.text-bg {
+  color: var(--font-color);
+}
+
+.text-bg-contrast {
+  color: var(--font-contrast-color) !important;
+}
+
+.text-bg-contrast-button {
+  color: var(--font-contrast-button) !important;
+}
+
+.card {
+  min-height: 450px;
+}
+
+#slogan {
+  min-height: 75vh;
+}
+
+h2 {
+  font-size: 2.5em !important;
+}
+
+p,
+button {
+  font-size: 1.3em !important;
+  font-weight: 500;
+}
+
+.hover {
+  transition-duration: 0.5s;
+}
+
+button:hover {
+  transform: scale(1.04);
+}
+
+.hover:hover {
+  transform: scale(1.1);
+}
+
+.hover-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 750px) {
+  h1 {
+    font-size: 3em !important;
+  }
+
+  .offcanvas {
+    background: var(--background-color) !important;
+  }
+
+  .offcanvas .offcanvas-header,
+  .navbar-nav {
+    color: var(--font-color);
+  }
+
+  .card {
+    min-height: 250px;
+  }
+
+  #slogan {
+    min-height: 45vh;
+  }
+}
