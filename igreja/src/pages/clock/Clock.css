@@ -1,0 +1,105 @@
+.clock-display {
+  width: 500px;
+  height: 500px;
+
+  background: #fffa
+    url("https://github.com/emanuelbimdeoliveira/html-css-javascript/blob/main/relogioanalogico/img/%E2%80%94Pngtree%E2%80%94watch%20clock%20numbers%20vector%20and_8654014-1000px.png?raw=true")
+    no-repeat center center;
+  background-size: 100% 100%;
+
+  border: 3px solid black;
+    outline: 5px solid var(--background_color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  position: relative;
+}
+
+.clock-display div span {
+  border: solid 3px black;
+}
+
+.centerDot {
+  background: var(--background_color);
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+  border: solid 3px black;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  display: block;
+
+  z-index: 20;
+}
+
+.hours,
+.minutes,
+.seconds {
+  width: 50%;
+  height: 50%;
+
+  position: absolute;
+}
+
+.hours {
+  z-index: 1;
+}
+
+.minutes {
+  z-index: 5;
+}
+
+.seconds {
+  z-index: 10;
+}
+
+.hours .hours-hand,
+.minutes .minutes-hand,
+.seconds .seconds-hand {
+  border-radius: 6px;
+
+  display: block;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(0, -100%);
+}
+
+.seconds .seconds-hand {
+  background: var(--background_color);
+
+  width: 8px;
+  height: 100%;
+
+  transform: translate(-50%, -80%);
+}
+
+.minutes .minutes-hand {
+  background: var(--background_color);
+
+  width: 13px;
+  height: 65%;
+
+  transform: translate(-50%, -100%);
+}
+
+.hours .hours-hand {
+  background: var(--background_color);
+
+  width: 16px;
+  height: 35%;
+
+  transform: translate(-50%, -100%);
+}
