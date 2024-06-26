@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Site</title>
+
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+      }
+
+      :root {
+        --background-color: linear-gradient(180deg, #4f0040, #400040);
+        --font-color: #f8fffa;
+        --font-contrast-color: #4f0040;
+        --dark-theme: #000;
+        --main-background: #ddda;
+      }
+
+      ::-webkit-scrollbar {
+        background-color: var(--font-color);
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--background-color);
+      }
+
+      html,
+      body {
+        overflow-x: hidden;
+      }
+
+      .bg {
+        background: var(--background-color);
+      }
+
+      .dark-bg {
+        background-color: var(--dark-theme);
+      }
+
+      .text-bg {
+        color: var(--font-color);
+        text-shadow: 2px 2px 0 var(--dark-theme);
+      }
+
+      .text-bg-contrast {
+        color: var(--font-contrast-color) !important;
+      }
+
+      .navbar-expand-lg .navbar-nav a,
+      a,
+      .menu {
+        color: var(--font-color);
+      }
+
+      .btn:hover,
+      a:hover,
+      .hover:hover {
+        transform: scale(1.05);
+        color: var(--font-color);
+      }
+
+      main {
+        background-color: var(--main-background);
+        text-align: center;
+        margin-top: 66px;
+      }
+
+      .screen-section {
+        min-height: 80vh;
+        padding: 5em 0;
+      }
+
+      .text-section {
+        min-height: 40vh;
+      }
+
+      .text-bold {
+        font-weight: 700;
+      }
+
+      h1 {
+        font-size: 3em;
+        font-weight: 800;
+        text-shadow: 1px 1px 0 var(--dark-theme);
+      }
+
+      h2 {
+        font-size: 2.5em;
+        font-weight: 700;
+        text-shadow: 1px 1px 0 var(--dark-theme);
+      }
+
+      h3 {
+        font-size: 2em;
+        font-weight: 600;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      .footer {
+        background-color: var(--dark-theme);
+        color: var(--font-color);
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      li img {
+        filter: invert(1);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg text-bg p-3 fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./img/sua-logo.png" alt="" width="100" height="30" />
+        </a>
+
+        <button
+          class="btn-light text-bg-light rounded-3 shadow border-0 d-flex d-md-none p-2"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasMenu"
+          aria-controls="offcanvasMenu"
+        >
+          Menu
+        </button>
+
+        <div
+          class="offcanvas offcanvas-start bg text-bg w-75"
+          tabindex="-1"
+          id="offcanvasMenu"
+          aria-labelledby="offcanvasMenuLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <div>
+              Some text as placeholder. In real life you can have the elements
+              you have chosen. Like, text, images, lists, etc.
+            </div>
+
+            <div class="d-flex flex-column justify-content-start gap-3 pt-4">
+              <ul class="navbar-nav gap-3 text-bg-contrast">
+                <li class="nav-item">
+                  <a class="nav-link hover" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link hover" href="#about">Sobre</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link hover" href="#services">Serviços</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link hover" href="#faq">Perguntas Frequêntes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link hover" href="#contact">Contato</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="justify-content-end d-none d-md-flex">
+          <ul class="navbar-nav gap-3">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#faq">Perguntas Frequêntes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="text-bg-contrast">
+      <!-- banner -->
+      <section
+        class="row d-flex flex-column justify-content-center flex-md-row align-items-center gap-4"
+        style="min-height: 100vh"
+        id="home"
+      >
+        <div class="col-10 col-md-5 d-flex flex-column justify-content-center">
+          <div
+            class="d-flex flex-column justify-content-center align-items-start ms-md-5"
+          >
+            <h1 class="text-bold">Bem-vindo ao seu site</h1>
+            <p class="text-bold text-center text-md-start">
+              A solução de marketing digital para todas as suas necessidades
+              online.
+            </p>
+            <a href="#" class="btn bg text-bg btn-lg mx-auto mx-md-0"
+              >Saiba Mais</a
+            >
+          </div>
+        </div>
+        <div
+          class="col-10 col-md-5 d-flex flex-column justify-content-center align-items-center"
+        >
+          <img
+            src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="foto-principal"
+            class="w-100 w-md-75 rounded-3 shadow"
+          />
+        </div>
+      </section>
+
+      <!-- subsection -->
+      <section
+        class="third-section bg text-bg text-start text-md-center text-section d-flex flex-column justify-content-center py-5 px-3 px-md-5"
+        id="about"
+      >
+        <h2>Sobre nós</h2>
+        <p>
+          [Texto falando sobre a empresa][Texto falando sobre a empresa][Texto
+          falando sobre a empresa][Texto falando sobre a empresa][Texto falando
+          sobre a empresa][Texto falando sobre a empresa][Texto falando sobre a
+          empresa][Texto falando sobre a empresa][Texto falando sobre a
+          empresa][Texto falando sobre a empresa][Texto falando sobre a
+          empresa][Texto falando sobre a empresa][Texto falando sobre a empresa]
+        </p>
+      </section>
+
+      <!-- services -->
+      <section
+        class="screen-section text-center d-flex flex-column justify-content-center gap-3"
+        id="services"
+      >
+        <h2 class="mb-5">Serviços</h2>
+        <div class="row d-flex justify-content-center align-items-center gap-3">
+          <div class="col-9 col-md-3 shadow rounded bg text-bg p-3 py-5 p-md-5">
+            <h3>Serviço 1</h3>
+            <p>
+              Descrição breve do serviço 1. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit.
+            </p>
+          </div>
+          <div class="col-9 col-md-3 shadow rounded bg text-bg p-3 py-5 p-md-5">
+            <h3>Serviço 2</h3>
+            <p>
+              Descrição breve do serviço 2. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit.
+            </p>
+          </div>
+          <div class="col-9 col-md-3 shadow rounded bg text-bg p-3 py-5 p-md-5">
+            <h3>Serviço 3</h3>
+            <p>
+              Descrição breve do serviço 3. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center gap-3">
+          <div class="col-9 col-md-3 shadow rounded bg text-bg p-3 py-5 p-md-5">
+            <h3>Serviço 4</h3>
+            <p>
+              Descrição breve do serviço 4. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit.
+            </p>
+          </div>
+          <div class="col-9 col-md-3 shadow rounded bg text-bg p-3 py-5 p-md-5">
+            <h3>Serviço 5</h3>
+            <p>
+              Descrição breve do serviço 5. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit.
+            </p>
+          </div>
+          <div class="col-9 col-md-3 shadow rounded bg text-bg p-3 py-5 p-md-5">
+            <h3>Serviço 6</h3>
+            <p>
+              Descrição breve do serviço 6. Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- history -->
+      <section
+        class="third-section bg text-bg text-start text-md-center text-section d-flex flex-column justify-content-center py-5 px-3 px-md-5"
+        id="history"
+      >
+        <h2>Nossa História</h2>
+        <p>
+          [Texto contando a história da empresa][Texto contando a história da
+          empresa][Texto contando a história da empresa][Texto contando a
+          história da empresa][Texto contando a história da empresa][Texto
+          contando a história da empresa][Texto contando a história da
+          empresa][Texto contando a história da empresa]
+        </p>
+      </section>
+
+      <!-- products -->
+      <section class="container screen-section text-bg-contrast" id="products">
+        <h2 class="text-center pb-5">Nossos Produtos</h2>
+
+        <div class="row d-flex justify-content-center gap-5 align-items-center">
+          <div
+            class="col-10 col-md-5 d-flex flex-column justify-content-center align-items-start gap-2"
+          >
+            <h3>Produto 1</h3>
+            <p class="text-start">
+              [Texto explicando o produto][Texto explicando o produto][Texto
+              explicando o produto][Texto explicando o produto][Texto explicando
+              o produto][Texto explicando o produto][Texto explicando o
+              produto][Texto explicando o produto]
+            </p>
+            <a href="#" class="btn bg text-bg">Saiba Mais</a>
+          </div>
+          <div class="col-10 col-md-5">
+            <img
+              src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              class="img-fluid"
+              alt="Produto 1"
+            />
+          </div>
+        </div>
+
+        <div
+          class="row d-flex flex-row-reverse justify-content-center gap-5 align-items-center my-5"
+        >
+          <div
+            class="col-10 col-md-5 d-flex flex-column justify-content-center align-items-start gap-2"
+          >
+            <h3>Produto 1</h3>
+            <p class="text-start">
+              [Texto explicando o produto][Texto explicando o produto][Texto
+              explicando o produto][Texto explicando o produto][Texto explicando
+              o produto][Texto explicando o produto][Texto explicando o
+              produto][Texto explicando o produto]
+            </p>
+            <a href="#" class="btn bg text-bg">Saiba Mais</a>
+          </div>
+          <div class="col-10 col-md-5">
+            <img
+              src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              class="img-fluid"
+              alt="Serviço 1"
+            />
+          </div>
+        </div>
+
+        <div class="row d-flex justify-content-center gap-5 align-items-center">
+          <div
+            class="col-10 col-md-5 d-flex flex-column justify-content-center align-items-start gap-2"
+          >
+            <h3>Produto 1</h3>
+            <p class="text-start">
+              [Texto explicando o produto][Texto explicando o produto][Texto
+              explicando o produto][Texto explicando o produto][Texto explicando
+              o produto][Texto explicando o produto][Texto explicando o
+              produto][Texto explicando o produto]
+            </p>
+            <a href="#" class="btn bg text-bg">Saiba Mais</a>
+          </div>
+          <div class="col-10 col-md-5">
+            <img
+              src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              class="img-fluid"
+              alt="Serviço 1"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- numbers -->
+      <section
+        class="third-section bg text-bg text-center text-section d-flex flex-column justify-content-center py-5 px-3 px-md-5"
+        id="numbers"
+      >
+        <h2 class="pb-3">Números</h2>
+        <div class="row d-flex justify-content-center gap-3">
+          <div class="col-9 col-md-3 p-3">
+            <h3>+50k</h3>
+            <p>[Texto explicando sobre esse número]</p>
+          </div>
+          <div class="col-9 col-md-3 p-3">
+            <h3>+300</h3>
+            <p>[Texto explicando sobre esse número]</p>
+          </div>
+          <div class="col-9 col-md-3 p-3">
+            <h3>+1500</h3>
+            <p>[Texto explicando sobre esse número]</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- faq -->
+      <section
+        class="screen-section py-5 d-flex flex-column justify-content-center"
+        id="faq"
+      >
+        <h2 class="text-center mb-5">Perguntas Frequêntes</h2>
+        <div
+          class="accordion col-11 col-md-8 mx-auto shadow border-0"
+          id="accordionFAQ"
+        >
+          <div class="accordion-item bg text-bg text-start">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button text-bold text-bg-contrast"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Pergunta 1
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionFAQ"
+            >
+              <div class="accordion-body">
+                <strong>Primeira Resposta ou consideração.</strong> [Texto
+                respondendo à esse pergunta][Texto respondendo à esse
+                pergunta][Texto respondendo à esse pergunta][Texto respondendo à
+                esse pergunta][Texto respondendo à esse pergunta]
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item bg text-bg text-start">
+            <h2 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button text-bold text-bg-contrast collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Pergunta 2
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#accordionFAQ"
+            >
+              <div class="accordion-body">
+                <strong>Segunda Resposta ou consideração.</strong> [Texto
+                respondendo à esse pergunta][Texto respondendo à esse
+                pergunta][Texto respondendo à esse pergunta][Texto respondendo à
+                esse pergunta][Texto respondendo à esse pergunta]
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item bg text-bg text-start">
+            <h2 class="accordion-header" id="headingThree">
+              <button
+                class="accordion-button text-bold text-bg-contrast collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Pergunta 3
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingThree"
+              data-bs-parent="#accordionFAQ"
+            >
+              <div class="accordion-body">
+                <strong>Terceira Resposta ou consideração.</strong> [Texto
+                respondendo à esse pergunta][Texto respondendo à esse
+                pergunta][Texto respondendo à esse pergunta][Texto respondendo à
+                esse pergunta][Texto respondendo à esse pergunta]
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item bg text-bg text-start">
+            <h2 class="accordion-header" id="headingFour">
+              <button
+                class="accordion-button text-bold text-bg-contrast collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseFour"
+              >
+                Pergunta 4
+              </button>
+            </h2>
+            <div
+              id="collapseFour"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingFour"
+              data-bs-parent="#accordionFAQ"
+            >
+              <div class="accordion-body">
+                <strong>Quarta Resposta ou consideração.</strong> [Texto
+                respondendo à esse pergunta][Texto respondendo à esse
+                pergunta][Texto respondendo à esse pergunta][Texto respondendo à
+                esse pergunta][Texto respondendo à esse pergunta]
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item bg text-bg text-start">
+            <h2 class="accordion-header" id="headingFive">
+              <button
+                class="accordion-button text-bold text-bg-contrast collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFive"
+                aria-expanded="false"
+                aria-controls="collapseFive"
+              >
+                Pergunta 5
+              </button>
+            </h2>
+            <div
+              id="collapseFive"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingFive"
+              data-bs-parent="#accordionFAQ"
+            >
+              <div class="accordion-body">
+                <strong>Quinta Resposta ou consideração.</strong> [Texto
+                respondendo à esse pergunta][Texto respondendo à esse
+                pergunta][Texto respondendo à esse pergunta][Texto respondendo à
+                esse pergunta][Texto respondendo à esse pergunta]
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg text-bg p-0" id="contact">
+      <div class="row p-3 gap-3 gap-md-0 py-5">
+        <article
+          class="col-12 col-md-4 pe-0 pe-md-5 mt-3 mt-md-0 mx-auto text-center text-md-start"
+        >
+          <h4>Mais informações</h4>
+          <p>
+            [Algumas outras informações][Algumas outras informações][Algumas
+            outras informações][Algumas outras informações]
+          </p>
+        </article>
+        <article class="row col-12 col-md-4 mx-auto">
+          <a class="navbar-brand" href="#">
+            <img src="./img/sua-logo.png" alt="" width="100" height="30" />
+          </a>
+          <ul
+            class="navbar-nav text-bg-contrast mx-auto d-flex flex-row justify-content-center"
+          >
+            <li class="nav-item w-50">
+              <a class="nav-link hover menu" href="#home">Home</a>
+            </li>
+            <li class="nav-item w-50">
+              <a class="nav-link hover menu" href="#about">Sobre</a>
+            </li>
+            <li class="nav-item w-50">
+              <a class="nav-link hover menu" href="#services">Serviços</a>
+            </li>
+            <li class="nav-item w-50">
+              <a class="nav-link hover menu" href="#faq">FAQ</a>
+            </li>
+            <li class="nav-item w-50">
+              <a class="nav-link hover menu" href="#contact">Contato</a>
+            </li>
+          </ul>
+        </article>
+
+        <article
+          class="col-12 col-md-4 mx-auto d-flex flex-column justify-content-start align-items-center align-items-md-end gap-3"
+        >
+          <h4>Siga nossas Redes Sociais</h4>
+          <ul class="p-0 d-flex flex-row justify-content-center gap-3">
+            <li class="hover">
+              <a href="wa.me/42999908254">
+                <img
+                  src="./img/whatsapp.png"
+                  width="30"
+                  height="30"
+                  class="hover"
+                  alt="whats"
+                />
+              </a>
+            </li>
+            <li class="hover">
+              <a href="wa.me/42999908254">
+                <img
+                  src="./img/facebook.png"
+                  width="30"
+                  height="30"
+                  class="hover"
+                  alt="facebook"
+                />
+              </a>
+            </li>
+            <li class="hover">
+              <a href="wa.me/42999908254">
+                <img
+                  src="./img/instagram.png"
+                  width="30"
+                  height="30"
+                  class="hover"
+                  alt="instagram"
+                />
+              </a>
+            </li>
+            <li class="hover">
+              <a href="wa.me/42999908254">
+                <img
+                  src="./img/maps.png"
+                  width="30"
+                  height="30"
+                  class="hover"
+                  alt="maps"
+                />
+              </a>
+            </li>
+            <li class="hover">
+              <a href="wa.me/42999908254">
+                <img
+                  src="./img/telefone.png"
+                  width="30"
+                  height="30"
+                  class="hover"
+                  alt="whats"
+                />
+              </a>
+            </li>
+          </ul>
+        </article>
+      </div>
+      <div class="dark-bg text-bg w-100 p-3">
+        <p class="m-0">© 2024 Meu Site. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
